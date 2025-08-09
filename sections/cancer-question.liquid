@@ -9,36 +9,17 @@
           <h2>{{ section.settings.heading }}</h2>
           <p>{{ section.settings.subheading }}</p>
         </div>
-        <div class="cancer-question__blocks">
-          {% for block in section.blocks %}
-            <div class="cancer-question__block" data-url="{{ block.settings.product.url }}">
-              <div class="cancer-question__block-content">
-                <div class="cancer-question__block-icon"></div>
-                <div class="cancer-question__block-text">
-                  <p class="cancer-question__block-text--title">{{ block.settings.title }}</p>
-                  <p class="cancer-question__block-text--desc">{{ block.settings.description }}</p>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-          <!-- New answer option with link to quiz -->
-          <div class="cancer-question__block" data-url="/pages/quiz">
-            <div class="cancer-question__block-content">
-              <div class="cancer-question__block-icon"></div>
-              <div class="cancer-question__block-text">
-                <p class="cancer-question__block-text--title">Need More Guidance?</p>
-                <p class="cancer-question__block-text--desc">Take our oncologist- and naturopath-designed quiz for a fully personalized, cancer survivor-specific wellness routine.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="canver-question__buttons">
-          <p style="color: #333333;"><strong>Need quick help? Chat with us!</strong></p>
-        </div>
+        <div id="cancer-quiz" class="cancer-question__blocks" data-step-count="{{ section.blocks.size }}"></div>
       </div>
     </div>
   </div>
 </div>
+
+{% for block in section.blocks %}
+  <script type="application/json" id="cancer-step-{{ forloop.index0 }}" data-title="{{ block.settings.title | escape }}">
+    {{ block.settings.questions_json }}
+  </script>
+{% endfor %}
 
 <style>
   .cancer-question .container {
@@ -90,20 +71,118 @@
 
   .cancer-question__block-text--desc {
     color: #666;
-    font-size: 14px; 
+    font-size: 14px;
   }
 
-  .quiz-button {
-    display: none; /* Hide the original quiz button */
+  .quiz-question {
+    margin-bottom: 20px;
+  }
+
+  .quiz-question__title {
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 </style>
 
 <script>
-  $(document).on('click', '.cancer-question__block', function() {
-    $('.cancer-question__block').removeClass('active');
-    $(this).addClass('active');
-    var url = $(this).data('url');
-    window.location.href = url;
+  document.addEventListener('DOMContentLoaded', function() {
+    var quizContainer = document.getElementById('cancer-quiz');
+    if (!quizContainer) return;
+    var stepCount = parseInt(quizContainer.getAttribute('data-step-count'), 10) || 0;
+    var steps = [];
+    for (var i = 0; i < stepCount; i++) {
+      var dataTag = document.getElementById('cancer-step-' + i);
+      if (!dataTag) continue;
+      var qs = [];
+      try {
+        qs = JSON.parse(dataTag.textContent);
+      } catch (e) {
+        console.warn('Invalid JSON in cancer-question step', i);
+      }
+      steps.push({
+        title: dataTag.getAttribute('data-title'),
+        questions: qs
+      });
+      dataTag.parentNode.removeChild(dataTag);
+    }
+
+    var currentStep = 0;
+    var answers = {};
+
+    function renderStep() {
+      quizContainer.innerHTML = '';
+      var step = steps[currentStep];
+      if (!step) return;
+
+      var stepEl = document.createElement('div');
+      stepEl.className = 'quiz-step';
+
+      if (step.title) {
+        var h3 = document.createElement('h3');
+        h3.textContent = step.title;
+        stepEl.appendChild(h3);
+      }
+
+      step.questions.forEach(function(q, qi) {
+        var qEl = document.createElement('div');
+        qEl.className = 'quiz-question';
+        var qTitle = document.createElement('p');
+        qTitle.className = 'quiz-question__title';
+        qTitle.textContent = q.question;
+        qEl.appendChild(qTitle);
+
+        q.options.forEach(function(opt) {
+          var optionEl = document.createElement('div');
+          optionEl.className = 'cancer-question__block';
+          var inner = document.createElement('div');
+          inner.className = 'cancer-question__block-content';
+          var icon = document.createElement('div');
+          icon.className = 'cancer-question__block-icon';
+          var textWrap = document.createElement('div');
+          textWrap.className = 'cancer-question__block-text';
+          var titleEl = document.createElement('p');
+          titleEl.className = 'cancer-question__block-text--title';
+          titleEl.textContent = opt.label;
+          textWrap.appendChild(titleEl);
+          inner.appendChild(icon);
+          inner.appendChild(textWrap);
+          optionEl.appendChild(inner);
+
+          optionEl.addEventListener('click', function() {
+            var siblings = qEl.querySelectorAll('.cancer-question__block');
+            Array.prototype.forEach.call(siblings, function(s) { s.classList.remove('active'); });
+            optionEl.classList.add('active');
+            answers['step' + currentStep + 'q' + qi] = opt.value || opt.label;
+            if (opt.url) {
+              window.location.href = opt.url;
+            } else {
+              checkAdvance();
+            }
+          });
+
+          qEl.appendChild(optionEl);
+        });
+
+        stepEl.appendChild(qEl);
+      });
+
+      quizContainer.appendChild(stepEl);
+    }
+
+    function checkAdvance() {
+      var step = steps[currentStep];
+      var allAnswered = step.questions.every(function(q, qi) {
+        return Object.prototype.hasOwnProperty.call(answers, 'step' + currentStep + 'q' + qi);
+      });
+      if (allAnswered) {
+        currentStep++;
+        if (currentStep < steps.length) {
+          renderStep();
+        }
+      }
+    }
+
+    renderStep();
   });
 </script>
 
@@ -134,23 +213,19 @@
   ],
   "blocks": [
     {
-      "type": "question",
-      "name": "Question",
+      "type": "step",
+      "name": "Step",
       "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        },
         {
           "type": "text",
           "id": "title",
-          "label": "Title"
+          "label": "Step Title"
         },
         {
           "type": "textarea",
-          "id": "description",
-          "label": "Description"
+          "id": "questions_json",
+          "label": "Questions JSON",
+          "info": "Provide a JSON array of questions and options. Final step options may include a \"url\" to redirect to a product."
         }
       ]
     }
