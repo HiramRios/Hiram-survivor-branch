@@ -495,8 +495,8 @@
           "type": "option",
           "settings": {
             "question": "",
-            "value": "",
-            "title": "",
+            "value": "SERDs",
+            "title": "SERDs (Selective Estrogen Receptor Degraders)",
             "description": ""
           }
         }
