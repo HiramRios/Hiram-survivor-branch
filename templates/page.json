@@ -476,6 +476,7 @@
         "option_ezBcA8": {
           "type": "option",
           "settings": {
+            "stage": 3,
             "question": "",
             "value": "ais",
             "title": "Aromatase Inhibitors (AIs)",
