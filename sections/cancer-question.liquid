@@ -9,29 +9,57 @@
           <h2>{{ section.settings.heading }}</h2>
           <p>{{ section.settings.subheading }}</p>
         </div>
-        <div class="cancer-question__blocks">
-          {% for block in section.blocks %}
-            <div class="cancer-question__block" data-url="{{ block.settings.product.url }}">
-              <div class="cancer-question__block-content">
-                <div class="cancer-question__block-icon"></div>
-                <div class="cancer-question__block-text">
-                  <p class="cancer-question__block-text--title">{{ block.settings.title }}</p>
-                  <p class="cancer-question__block-text--desc">{{ block.settings.description }}</p>
-                </div>
+
+        <div class="cancer-question__steps">
+          <div class="cq-step cq-step--1 active">
+            <div class="cq-question-group">
+              <p class="cq-question-title">Estrogen Receptor Status</p>
+              <div class="cq-options" data-question="er_status">
+                <button class="cq-option" data-value="ER+">Estrogen Positive (ER+)</button>
+                <button class="cq-option" data-value="ER-">Estrogen Negative (ER-)</button>
               </div>
             </div>
-          {% endfor %}
-          <!-- New answer option with link to quiz -->
-          <div class="cancer-question__block" data-url="/pages/quiz">
-            <div class="cancer-question__block-content">
-              <div class="cancer-question__block-icon"></div>
-              <div class="cancer-question__block-text">
-                <p class="cancer-question__block-text--title">Need More Guidance?</p>
-                <p class="cancer-question__block-text--desc">Take our oncologist- and naturopath-designed quiz for a fully personalized, cancer survivor-specific wellness routine.</p>
+            <div class="cq-question-group">
+              <p class="cq-question-title">HER2 Status</p>
+              <div class="cq-options" data-question="her2_status">
+                <button class="cq-option" data-value="HER2+">HER2 Positive (HER2+)</button>
+                <button class="cq-option" data-value="HER2-">HER2 Negative (HER2-)</button>
+              </div>
+            </div>
+            <div class="cq-question-group">
+              <p class="cq-question-title">Cancer Subtype</p>
+              <div class="cq-options" data-question="cancer_subtype">
+                <button class="cq-option" data-value="not_applicable">Not applicable to me</button>
+                <button class="cq-option" data-value="TNBC">Triple Negative (TNBC)</button>
+                <button class="cq-option" data-value="TPBC">Triple Positive (TPBC)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cq-step cq-step--2">
+            <div class="cq-question-group">
+              <p class="cq-question-title">Are you postmenopausal?</p>
+              <div class="cq-options" data-question="menopause">
+                <button class="cq-option" data-value="Yes">Yes</button>
+                <button class="cq-option" data-value="No">No</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cq-step cq-step--3">
+            <div class="cq-question-group">
+              <p class="cq-question-title">Are you currently taking any of the following medications?</p>
+              <div class="cq-options cq-options--medication">
+                {% for block in section.blocks %}
+                <button class="cq-option" data-url="{{ block.settings.product.url }}" data-value="{{ block.settings.title }}">
+                  {{ block.settings.title }}
+                </button>
+                {% endfor %}
               </div>
             </div>
           </div>
         </div>
+
         <div class="canver-question__buttons">
           <p style="color: #333333;"><strong>Need quick help? Chat with us!</strong></p>
         </div>
@@ -41,124 +69,80 @@
 </div>
 
 <style>
-  .cancer-question .container {
-    background-color: {{ section.settings.bg_color }};
-    display: flex;
-  }
+.cancer-question .container {
+  background-color: {{ section.settings.bg_color }};
+  display: flex;
+}
 
-  .cancer-question__block {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 20px; 
-    margin-bottom: 20px;
-    background-color: #fff;
-    width: 100%;
-  }
+.cq-step { display: none; }
+.cq-step.active { display: block; }
 
-  .cancer-question__block:hover {
-    background-color: #f0f0f0;
-  }
+.cq-option {
+  cursor: pointer;
+  display: block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: left;
+}
+.cq-option.selected, .cq-option:hover {
+  background-color: #f0f0f0;
+}
 
-  .cancer-question__block-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .cancer-question__block-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-
-  .cancer-question__block-text {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 60px);
-  }
-
-  .cancer-question__block-text--title {
-    font-weight: bold;
-    font-size: 16px; 
-  }
-
-  .cancer-question__block-text--desc {
-    color: #666;
-    font-size: 14px; 
-  }
-
-  .quiz-button {
-    display: none; /* Hide the original quiz button */
-  }
+.cq-question-group { margin-bottom: 20px; }
+.cq-question-title { font-weight: bold; margin-bottom: 10px; }
 </style>
 
 <script>
-  $(document).on('click', '.cancer-question__block', function() {
-    $('.cancer-question__block').removeClass('active');
-    $(this).addClass('active');
-    var url = $(this).data('url');
-    window.location.href = url;
-  });
+  (function($){
+    var selections = {};
+    function goToStep(step){
+      $('.cq-step').removeClass('active');
+      $('.cq-step--' + step).addClass('active');
+    }
+    $(document).on('click', '.cq-step--1 .cq-option', function(){
+      var question = $(this).parent().data('question');
+      $(this).siblings().removeClass('selected');
+      $(this).addClass('selected');
+      selections[question] = $(this).data('value');
+      if(selections.er_status && selections.her2_status && selections.cancer_subtype){
+        goToStep(2);
+      }
+    });
+    $(document).on('click', '.cq-step--2 .cq-option', function(){
+      selections.menopause = $(this).data('value');
+      goToStep(3);
+    });
+    $(document).on('click', '.cq-step--3 .cq-option', function(){
+      var url = $(this).data('url');
+      if(url){ window.location.href = url; }
+    });
+  })(jQuery);
 </script>
 
 {% schema %}
 {
   "name": "Cancer Question",
   "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading"
-    }
+    { "type": "color", "id": "bg_color", "label": "Background Color" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "subheading", "label": "Subheading" }
   ],
   "blocks": [
     {
-      "type": "question",
-      "name": "Question",
+      "type": "med_option",
+      "name": "Medication Option",
       "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description"
-        }
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "title", "label": "Title" }
       ]
     }
   ],
   "presets": [
-    {
-      "name": "Cancer Question"
-    }
+    { "name": "Cancer Question" }
   ]
 }
 {% endschema %}
