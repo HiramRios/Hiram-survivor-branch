@@ -1,1 +1,226 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"subheading":"","subheading_size":3,"show_title":true,"heading_size":8,"show_content":true,"text_size":4,"align_text":"text-left","width":"wrapper","bg_color":"","color":"","padding_top":50,"padding_bottom":50}},"cancer_question_6xCDwY":{"type":"cancer-question","blocks":{"question_caaeaw":{"type":"question","settings":{"product":"wellsurvivor-breast-er-tx","title":"Hormone-Positive (ER+) on SERMs","description":"Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)<\/b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen."}},"question_eNLKFK":{"type":"question","settings":{"product":"breast-er-support","title":"Hormone-Positive (ER+)","description":"Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers <\/b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)<\/b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s)."}},"question_FaX7GV":{"type":"question","settings":{"product":"wellsurvivor-breast-er-negative","title":"Hormone-Negative (ER-)","description":"Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness."}}},"block_order":["question_caaeaw","question_eNLKFK","question_FaX7GV"],"settings":{"bg_color":"#fcf4f6","image":"shopify:\/\/shop_images\/Breast_Landing_Page.jpg","heading":"Which type of breast cancer did you survive?","subheading":"Your treatment was breast cancer specific—now your supplements can be too."}}},"order":["main","cancer_question_6xCDwY"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "subheading_size": 3,
+        "show_title": true,
+        "heading_size": 8,
+        "show_content": true,
+        "text_size": 4,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "bg_color": "",
+        "color": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "cancer_question_6xCDwY": {
+      "type": "cancer-question",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#fcf4f6",
+        "image": "shopify://shop_images/Breast_Landing_Page.jpg",
+        "heading": "Which type of breast cancer did you survive?",
+        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
+      }
+    },
+    "cancer_question_4TnRXe": {
+      "type": "cancer-question",
+      "blocks": {
+        "result_Kp43Qj": {
+          "type": "result",
+          "settings": {
+            "combination": "ERS|yes|IV",
+            "product": "wellsurvivor-breast-er-positive"
+          }
+        },
+        "result_8fFta8": {
+          "type": "result",
+          "settings": {
+            "combination": "ERS|no|cdk",
+            "product": "wellsurvivor-all-survivors"
+          }
+        },
+        "result_JxHqNd": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "product": ""
+          }
+        },
+        "result_DgcH39": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "product": ""
+          }
+        },
+        "result_cLhDWt": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "product": ""
+          }
+        },
+        "result_QbF4L7": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "product": ""
+          }
+        },
+        "result_DWpxWR": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "product": ""
+          }
+        },
+        "option_r7G9e4": {
+          "type": "option",
+          "settings": {
+            "stage": 1,
+            "question": "",
+            "value": "ERS",
+            "title": "Estrogen Receptor Status",
+            "description": "o Estrogen Positive (ER+)\no Estrogen Negative (ER-)"
+          }
+        },
+        "option_zXjtmz": {
+          "type": "option",
+          "settings": {
+            "stage": 1,
+            "question": "",
+            "value": "HER2",
+            "title": "HER2 Status",
+            "description": "o HER2 Positive (HER2+)\no HER2 Negative (HER2-)"
+          }
+        },
+        "option_Wtat3H": {
+          "type": "option",
+          "settings": {
+            "stage": 1,
+            "question": "",
+            "value": "CS",
+            "title": "Cancer Subtype",
+            "description": "o Not applicable to me\no Triple Negative (TNBC)\no Triple Positive (TPBC)"
+          }
+        },
+        "option_zzintT": {
+          "type": "option",
+          "settings": {
+            "stage": 2,
+            "question": "Are you postmenopausal?You are considered postmenopausal if you haven’t had a menstrual period for 12months or if your medical team has told you that you are.",
+            "value": "yes",
+            "title": "yes",
+            "description": ""
+          }
+        },
+        "option_hBywPM": {
+          "type": "option",
+          "settings": {
+            "stage": 2,
+            "question": "",
+            "value": "no",
+            "title": "no",
+            "description": ""
+          }
+        },
+        "option_tGxPBb": {
+          "type": "option",
+          "settings": {
+            "stage": 3,
+            "question": "“Are you currently taking any of the following medications?”",
+            "value": "IV",
+            "title": "IV or Injectable Therapies",
+            "description": ""
+          }
+        },
+        "option_KhYBhR": {
+          "type": "option",
+          "settings": {
+            "stage": 3,
+            "question": "",
+            "value": "cdk",
+            "title": "CDK 4/6 Inhibitors",
+            "description": ""
+          }
+        },
+        "option_eYb6C4": {
+          "type": "option",
+          "settings": {
+            "stage": 3,
+            "question": "",
+            "value": "ais",
+            "title": "Aromatase Inhibitors (AIs)",
+            "description": ""
+          }
+        },
+        "option_Am3E6N": {
+          "type": "option",
+          "settings": {
+            "stage": 3,
+            "question": "",
+            "value": "SERMs",
+            "title": "SERMs (Selective Estrogen Receptor Modulators)",
+            "description": ""
+          }
+        },
+        "option_iWm9De": {
+          "type": "option",
+          "settings": {
+            "stage": 3,
+            "question": "",
+            "value": "SERDs",
+            "title": "SERDs (Selective Estrogen Receptor Degraders)",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "result_Kp43Qj",
+        "result_8fFta8",
+        "result_JxHqNd",
+        "result_DgcH39",
+        "result_cLhDWt",
+        "result_QbF4L7",
+        "result_DWpxWR",
+        "option_r7G9e4",
+        "option_zXjtmz",
+        "option_Wtat3H",
+        "option_zzintT",
+        "option_hBywPM",
+        "option_tGxPBb",
+        "option_KhYBhR",
+        "option_eYb6C4",
+        "option_Am3E6N",
+        "option_iWm9De"
+      ],
+      "name": "Cancer Question",
+      "settings": {
+        "bg_color": "#f9dee5",
+        "image": "shopify://shop_images/Breast_Landing_Page_f609d583-07ee-4809-b645-00913d108fad.jpg",
+        "heading": "Which type of breast cancer did you survive?",
+        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cancer_question_6xCDwY",
+    "cancer_question_4TnRXe"
+  ]
+}
