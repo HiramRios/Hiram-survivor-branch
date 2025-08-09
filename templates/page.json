@@ -407,7 +407,7 @@
           "type": "option",
           "settings": {
             "stage": 1,
-            "question": "“Which type of breast cancer did you survive?”Your treatment was breast cancer specific—now your supplements can be too.",
+            "question": "",
             "value": "ERS",
             "title": "Estrogen Receptor Status",
             "description": "o Estrogen Positive (ER+)\no Estrogen Negative (ER-)"
@@ -526,9 +526,9 @@
       "name": "Cancer Question",
       "settings": {
         "bg_color": "#f9dee5",
-        "image": "shopify://shop_images/Sydney_Kirk_Headshot_1.jpg",
-        "heading": "Quick quiz",
-        "subheading": ""
+        "image": "shopify://shop_images/Breast_Landing_Page_f609d583-07ee-4809-b645-00913d108fad.jpg",
+        "heading": "Which type of breast cancer did you survive?",
+        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
       }
     }
   },
