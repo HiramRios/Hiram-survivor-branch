@@ -12,7 +12,7 @@
   <div class="reviews-slider">
     <h2 class="reviews-slider__heading">{{ section.settings.title }}</h2>
     <div class="reviews-slider__content">{{ section.settings.content }}</div>
-    <div class="reviews-slider__blocks">
+    <div class="reviews-slider__blocks" style="--block-gap: {{ section.settings.block_gap }}px;">
       {% for block in section.blocks %}
         <div class="reviews-slider__block">
           <div class="reviews-slider__rating">        
@@ -102,6 +102,16 @@
       "type": "color",
       "id": "star",
       "label": "Star color"
+    },
+    {
+      "type": "range",
+      "id": "block_gap",
+      "label": "Block horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
     }
   ],
   "blocks": [
