@@ -61,6 +61,7 @@
         "heading_JXh8tF",
         "text_9tjVyC"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "custom_new-tab-ingredient",
         "width": "wrapper--narrow",
@@ -110,6 +111,7 @@
         "heading_eMg4A7",
         "text_WiTbCq"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "",
         "section_haeding": "",
@@ -261,6 +263,7 @@
         "icon_twGMn8",
         "icon_GynJRL"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "healthcare-grid",
         "title": "Our Scientific <i>Integrity</i> Pledge",
@@ -328,6 +331,7 @@
         "text_Wai68E",
         "buttons_UHpz7b"
       ],
+      "disabled": true,
       "settings": {
         "custom_class": "",
         "section_haeding": "",
@@ -349,6 +353,7 @@
     },
     "index_section_team_crkPJV": {
       "type": "index-section-team",
+      "disabled": true,
       "settings": {}
     },
     "cancer_question_bQHYaA": {
