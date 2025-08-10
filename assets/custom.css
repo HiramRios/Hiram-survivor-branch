@@ -8305,3 +8305,7 @@ ul.blog-search-nav li a:hover {
         margin-top: 20px;
     }
 }
+
+.btn.cancel {
+  padding-top: 20px;
+}
