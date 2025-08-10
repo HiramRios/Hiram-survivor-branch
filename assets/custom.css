@@ -8096,6 +8096,7 @@ ul.blog-search-nav li a:hover {
 .curcumin-popup__cancel {
     width: 100%;
     padding: 10px 12px;
+    padding-top: 20px;
     color: #2d9e4f;
     font-weight: 600;
     line-height: 150%;
