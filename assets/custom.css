@@ -8273,3 +8273,35 @@ ul.blog-search-nav li a:hover {
     width: 15px;
     height: 15px;
 }
+
+/* ReCharge account button sizing */
+.recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"] {
+    padding: 8px 14px;
+    min-width: 110px;
+}
+
+.recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+    padding: 8px 14px;
+    min-width: 90px;
+    margin-left: 12px !important;
+}
+
+@media (max-width: 749px) {
+    .recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+        width: 100%;
+        min-width: 0;
+        display: block;
+        margin-left: 0 !important;
+    }
+
+    .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+        margin-top: 8px;
+    }
+}
