@@ -109,6 +109,33 @@
   /* Main portal - Cancel subscription */
   .recharge-section-next-order-actions .recharge-card {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .recharge-section-next-order-actions [data-testid="recharge-internal-send-now-button"],
+  .recharge-section-next-order-actions [data-testid="recharge-internal-reschedule-button"],
+  .recharge-section-next-order-actions [data-testid="recharge-internal-skip-button"] {
+    flex: 1 1 0;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .recharge-section-next-order-actions [data-testid="recharge-internal-cancel-button"] {
+    flex: 0 1 auto;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .recharge-section-next-order-actions .recharge-card {
+      flex-direction: column;
+    }
+    .recharge-section-next-order-actions [data-testid="recharge-internal-send-now-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-reschedule-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-skip-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-cancel-button"] {
+      flex: none;
+      width: 100%;
+    }
   }
   .cancel-popup {
     position: fixed;
