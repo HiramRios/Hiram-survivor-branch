@@ -8279,14 +8279,14 @@ ul.blog-search-nav li a:hover {
 .recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"] {
-    padding: 8px 14px;
-    min-width: 110px;
+    padding: 6px 12px;
+    min-width: 95px;
 }
 
 .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
-    padding: 8px 14px;
-    min-width: 90px;
-    margin-left: 12px !important;
+    padding: 6px 12px;
+    min-width: 75px;
+    margin-left: 8px !important;
 }
 
 @media (max-width: 749px) {
@@ -8302,6 +8302,6 @@ ul.blog-search-nav li a:hover {
     }
 
     .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
-        margin-top: 8px;
+        margin-top: 20px;
     }
 }
