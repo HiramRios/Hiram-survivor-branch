@@ -8280,16 +8280,24 @@ ul.blog-search-nav li a:hover {
 .recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"] {
     padding: 6px 12px;
-    width: 90px !important;
+    width: 80px !important;
 }
 
 .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
     padding: 6px 12px;
-    width: 70px !important;
-    margin-left: 8px !important;
+    width: 60px !important;
+}
+
+.recharge-component-schedule-item .yno-action-wrap + .yno-action-wrap {
+    margin-left: 8px;
 }
 
 @media (max-width: 749px) {
+    .recharge-component-schedule-item .yno-action-wrap {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
     .recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
     .recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
     .recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
@@ -8298,10 +8306,9 @@ ul.blog-search-nav li a:hover {
         width: 100% !important;
         min-width: 0;
         display: block;
-        margin-left: 0 !important;
     }
 
     .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
-        padding-top: 20px;
+        margin-top: 20px;
     }
 }
