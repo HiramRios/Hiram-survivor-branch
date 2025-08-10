@@ -8275,17 +8275,20 @@ ul.blog-search-nav li a:hover {
 }
 
 /* ReCharge account button sizing */
+
 .recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-sendnow-button"],
 .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"] {
     padding: 6px 12px;
-    width: 80px !important;
+    width: 72px !important;
+    flex: 0 0 auto;
 }
 
 .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
     padding: 6px 12px;
-    width: 60px !important;
+    width: 56px !important;
+    flex: 0 0 auto;
 }
 
 .recharge-component-schedule-item .yno-action-wrap + .yno-action-wrap {
@@ -8295,6 +8298,7 @@ ul.blog-search-nav li a:hover {
 @media (max-width: 749px) {
     .recharge-component-schedule-item .yno-action-wrap {
         width: 100% !important;
+        flex-basis: 100%;
         margin-left: 0 !important;
     }
 
@@ -8306,6 +8310,7 @@ ul.blog-search-nav li a:hover {
         width: 100% !important;
         min-width: 0;
         display: block;
+        flex: 0 0 100%;
     }
 
     .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
