@@ -8305,3 +8305,9 @@ ul.blog-search-nav li a:hover {
         margin-top: 20px;
     }
 }
+
+/* Add padding to cancel buttons */
+.address-new-toggle,
+.address-edit-toggle {
+    padding-top: 20px;
+}
