@@ -156,7 +156,7 @@
             "stage": 3,
             "question": "“Are you currently taking any of the following medications?”",
             "subquestion": "",
-            "why": "",
+            "why": "Why we ask: \nSome medications influence hormone levels, nutrient absorption, and immune function.Knowing this helps us avoid interactions and offer safer support.",
             "value": "IV",
             "title": "IV or Injectable Therapies",
             "description": ""
