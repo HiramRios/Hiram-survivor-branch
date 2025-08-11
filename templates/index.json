@@ -1132,13 +1132,31 @@
             "question": "Policy question 2",
             "answer": "<p>policy answer 2</p>"
           }
+        },
+        "faq_LpKj3V": {
+          "type": "faq",
+          "settings": {
+            "tab": "Shipping",
+            "question": "Shipping question 1",
+            "answer": "<p>shipping answer 1</p>"
+          }
+        },
+        "faq_J44GGc": {
+          "type": "faq",
+          "settings": {
+            "tab": "Shipping",
+            "question": "shipping question 2",
+            "answer": "<p>shipping answer 2</p>"
+          }
         }
       },
       "block_order": [
         "faq_qxXNp6",
         "faq_3ia7xJ",
         "faq_fnjBLH",
-        "faq_fXPHYc"
+        "faq_fXPHYc",
+        "faq_LpKj3V",
+        "faq_J44GGc"
       ],
       "name": "FAQ tabs",
       "settings": {
