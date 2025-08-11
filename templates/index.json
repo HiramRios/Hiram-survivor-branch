@@ -1097,6 +1097,58 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_faq_tabs_B3yD6H": {
+      "type": "section-faq-tabs",
+      "blocks": {
+        "faq_YrzFGc": {
+          "type": "faq",
+          "settings": {
+            "tab": "policy",
+            "question": "Test1",
+            "answer": "<p>this is the answer for test 1 </p>"
+          }
+        },
+        "faq_gPQmj3": {
+          "type": "faq",
+          "settings": {
+            "tab": "policy",
+            "question": "Test1",
+            "answer": "<p>this is the answer for test 1 </p>"
+          }
+        },
+        "faq_8UDGKY": {
+          "type": "faq",
+          "settings": {
+            "tab": "General",
+            "question": "question for general",
+            "answer": "<p>answer for general </p>"
+          }
+        },
+        "faq_XRCW7V": {
+          "type": "faq",
+          "settings": {
+            "tab": "shipping",
+            "question": "question for shipping",
+            "answer": "<p>answer for shipping </p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YrzFGc",
+        "faq_gPQmj3",
+        "faq_8UDGKY",
+        "faq_XRCW7V"
+      ],
+      "name": "FAQ tabs",
+      "settings": {
+        "heading": "FAQs",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "bg_color": "#ffffff",
+        "text_color": "#000000"
+      }
     }
   },
   "order": [
@@ -1119,6 +1171,7 @@
     "section_blog_GD3khM",
     "section_double_J7qwCd",
     "section_hero_fiEfnM",
-    "section_double_pR6CdC"
+    "section_double_pR6CdC",
+    "section_faq_tabs_B3yD6H"
   ]
 }
