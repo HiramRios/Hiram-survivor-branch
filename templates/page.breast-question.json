@@ -96,7 +96,7 @@
             "stage": 1,
             "question": "Which type of breast cancer did you survive?",
             "subquestion": "Which type of breast cancer did you survive?",
-            "why": "Why we ask:\nYour breast cancer subtype—like hormone receptor status, HER2 status, and other\nmarkers—can influence which nutrients are safe and beneficial after treatment. By\nunderstanding these details, we can:\n Avoid ingredients that may interfere with your past or ongoing treatment\n Make smarter, safer formulation decisions\n Help fill nutritional gaps that are common post-treatment",
+            "why": "Why we ask:\nYour breast cancer subtype—like hormone receptor status, HER2 status, and other\nmarkers—can influence which nutrients are safe and beneficial after treatment.",
             "value": "ERS",
             "title": "Estrogen Receptor Status",
             "description": "o Estrogen Positive (ER+)\no Estrogen Negative (ER-)"
