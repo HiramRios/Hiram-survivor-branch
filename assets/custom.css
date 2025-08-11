@@ -4707,7 +4707,7 @@ button.opened .sliderule__chevron--right svg {
 .how-works__blocks {
     display: flex;
     flex-wrap: wrap;
-    gap:50px;
+    gap: var(--block-gap, 50px);
     padding-bottom: 30px;
 }
 .how-works-btns {
@@ -4766,7 +4766,7 @@ button.opened .sliderule__chevron--right svg {
 
 @media (max-width: 768px) {
     .how-works__blocks {
-        gap: 40px;
+        gap: var(--block-gap, 40px);
     }
 
     .how-works__block {
@@ -5701,7 +5701,7 @@ button.opened .sliderule__chevron--right svg {
     background: #FFFFFF;
     border-radius: 25px;
     border: 1px solid #707070;
-    margin: 0 20px;
+    margin: 0 var(--block-gap, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -160,7 +160,7 @@
 
     {%- if blocks_size > 0 -%}
       {%- capture columns_content -%}
-        <div class="{{ layout_class }} {{ section.settings.align_columns }} {{ section.settings.align_text }}"
+        <div class="{{ layout_class }} {{ section.settings.align_columns }} {{ section.settings.align_text }}" style="--gap: {{ section.settings.block_gap }}px;"
           {% if enable_slider %}
             data-grid-slider
             {% if request.design_mode %}
