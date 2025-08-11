@@ -156,14 +156,14 @@
 .tab-content { display: none; }
 .tab-content.current { display: block; }
 
-/* Ensure FAQ questions stack vertically with smaller spacing */
+/* Ensure FAQ questions stack vertically without altering width */
 .faq--tabs .faq-list {
   flex-direction: column;
 }
 
 .faq--tabs .faq-list__item {
-  flex-basis: 100%;
-  padding: calc(var(--gutter) / 3) 0;
+  width: 100%;
+  padding: calc(var(--gutter) / 2) 0;
 }
 {% endstylesheet %}
 
