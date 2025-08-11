@@ -6,8 +6,9 @@
     <div class="cancer-question__content">
       <div class="cancer-question__content-wrapper">
         <div class="cancer-question__text">
-          <h2>{{ section.settings.heading }}</h2>
-          <p>{{ section.settings.subheading }}</p>
+          <h2 id="cancer-question-heading">{{ section.settings.heading }}</h2>
+          <p id="cancer-question-subheading">{{ section.settings.subheading }}</p>
+          <p id="cancer-question-why">{{ section.settings.why }}</p>
         </div>
         <div class="cancer-question__blocks">
           {%- assign current_stage = '' -%}
@@ -16,8 +17,7 @@
               {%- assign block_stage = block.settings.stage | append: '' -%}
               {%- if current_stage != block_stage -%}
                 {%- unless current_stage == '' -%}</div>{%- endunless -%}
-                <div class="cancer-question__stage" data-stage="{{ block_stage }}"{%- unless current_stage == '' -%} style="display:none"{%- endunless -%}>
-                  <p class="cancer-question__question-text">{{ block.settings.question }}</p>
+                <div class="cancer-question__stage" data-stage="{{ block_stage }}" data-question="{{ block.settings.question | escape }}" data-subquestion="{{ block.settings.subquestion | escape }}" data-why="{{ block.settings.why | escape }}"{%- unless current_stage == '' -%} style="display:none"{%- endunless -%}>
                 {%- assign current_stage = block_stage -%}
               {%- endif -%}
               <div class="cancer-question__block" data-stage="{{ block.settings.stage }}" data-value="{{ block.settings.value }}">
@@ -61,9 +61,8 @@
     width: 100%;
   }
 
-  .cancer-question__question-text {
-    font-weight: bold;
-    margin-bottom: 15px;
+  #cancer-question-why {
+    margin-top: 10px;
   }
 
   .cancer-question__block {
@@ -120,8 +119,20 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    function updateTexts(stageEl) {
+      var headingEl = document.getElementById('cancer-question-heading');
+      var subEl = document.getElementById('cancer-question-subheading');
+      var whyEl = document.getElementById('cancer-question-why');
+      if (stageEl) {
+        headingEl.textContent = stageEl.getAttribute('data-question') || '';
+        subEl.textContent = stageEl.getAttribute('data-subquestion') || '';
+        whyEl.textContent = stageEl.getAttribute('data-why') || '';
+      }
+    }
+
     var answers = {};
     var totalStages = document.querySelectorAll('.cancer-question__stage').length;
+    updateTexts(document.querySelector('.cancer-question__stage'));
 
     var resultMap = {
       {%- assign result_blocks = section.blocks | where: 'type', 'result' -%}
@@ -145,10 +156,12 @@
       if (nextStage <= totalStages) {
         document.querySelectorAll('.cancer-question__stage').forEach(function(el) { el.style.display = 'none'; });
         var next = document.querySelector('.cancer-question__stage[data-stage="' + nextStage + '"]');
-        if (next) { next.style.display = 'block'; }
+        if (next) { next.style.display = 'block'; updateTexts(next); }
       } else {
-        var keyParts = [];
-        for (var i = 1; i <= totalStages; i++) { keyParts.push(answers[i]); }
+        var keyParts = Object.keys(answers)
+          .map(function(k) { return parseInt(k, 10); })
+          .sort(function(a, b) { return a - b; })
+          .map(function(k) { return answers[k]; });
         var finalUrl = resultMap[keyParts.join('|')];
         if (finalUrl) { window.location.href = finalUrl; }
       }
@@ -179,6 +192,11 @@
       "type": "text",
       "id": "subheading",
       "label": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "why",
+      "label": "Why We Ask"
     }
   ],
   "blocks": [
@@ -195,6 +213,16 @@
           "type": "text",
           "id": "question",
           "label": "Question"
+        },
+        {
+          "type": "text",
+          "id": "subquestion",
+          "label": "Sub Question"
+        },
+        {
+          "type": "textarea",
+          "id": "why",
+          "label": "Why We Ask"
         },
         {
           "type": "text",
