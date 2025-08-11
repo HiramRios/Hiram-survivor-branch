@@ -25,7 +25,7 @@
       endunless
     endif
   endfor
-  assign tabs_array = tabs_string | split: '||'
+  assign tabs_array = tabs_string | split: '||' | reject: ''
 -%}
 
 {%- style -%}
