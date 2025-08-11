@@ -1097,6 +1097,76 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_faq_tabs_Tfnz8a": {
+      "type": "section-faq-tabs",
+      "blocks": {
+        "faq_qxXNp6": {
+          "type": "faq",
+          "settings": {
+            "tab": "General",
+            "question": "General 1",
+            "answer": "<p>general answer1</p>"
+          }
+        },
+        "faq_3ia7xJ": {
+          "type": "faq",
+          "settings": {
+            "tab": "General",
+            "question": "General 2",
+            "answer": "<p>General answer 2</p>"
+          }
+        },
+        "faq_fnjBLH": {
+          "type": "faq",
+          "settings": {
+            "tab": "Policy",
+            "question": "Policy question 1",
+            "answer": "<p>Policy answer 1</p>"
+          }
+        },
+        "faq_fXPHYc": {
+          "type": "faq",
+          "settings": {
+            "tab": "Policy",
+            "question": "Policy question 2",
+            "answer": "<p>policy answer 2</p>"
+          }
+        },
+        "faq_LpKj3V": {
+          "type": "faq",
+          "settings": {
+            "tab": "Shipping",
+            "question": "Shipping question 1",
+            "answer": "<p>shipping answer 1</p>"
+          }
+        },
+        "faq_J44GGc": {
+          "type": "faq",
+          "settings": {
+            "tab": "Shipping",
+            "question": "shipping question 2",
+            "answer": "<p>shipping answer 2</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_qxXNp6",
+        "faq_3ia7xJ",
+        "faq_fnjBLH",
+        "faq_fXPHYc",
+        "faq_LpKj3V",
+        "faq_J44GGc"
+      ],
+      "name": "FAQ tabs",
+      "settings": {
+        "heading": "FAQs",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "bg_color": "#ffffff",
+        "text_color": "#000000"
+      }
     }
   },
   "order": [
@@ -1119,6 +1189,7 @@
     "section_blog_GD3khM",
     "section_double_J7qwCd",
     "section_hero_fiEfnM",
-    "section_double_pR6CdC"
+    "section_double_pR6CdC",
+    "section_faq_tabs_Tfnz8a"
   ]
 }
