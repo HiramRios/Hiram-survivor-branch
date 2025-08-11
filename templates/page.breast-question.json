@@ -132,7 +132,7 @@
             "stage": 2,
             "question": "Are you postmenopausal?",
             "subquestion": "You are considered postmenopausal if you haven’t had a menstrual period for 12months or if your medical team has told you that you are",
-            "why": "Menopause impacts your hormones, treatment path, and nutritional needs. Knowing\nyour menopausal status helps us:",
+            "why": "Why we ask:\nMenopause impacts your hormones, treatment path, and nutritional needs. Knowing\nyour menopausal status helps us:",
             "value": "yes",
             "title": "yes",
             "description": ""
