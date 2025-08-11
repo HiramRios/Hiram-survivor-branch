@@ -34,7 +34,8 @@
         "bg_color": "#fcf4f6",
         "image": "shopify://shop_images/Breast_Landing_Page.jpg",
         "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
+        "subheading": "Your treatment was breast cancer specific—now your supplements can be too.",
+        "why": ""
       }
     },
     "cancer_question_4TnRXe": {
@@ -93,7 +94,9 @@
           "type": "option",
           "settings": {
             "stage": 1,
-            "question": "",
+            "question": "Which type of breast cancer did you survive?",
+            "subquestion": "Which type of breast cancer did you survive?",
+            "why": "Why we ask:\nYour breast cancer subtype—like hormone receptor status, HER2 status, and other\nmarkers—can influence which nutrients are safe and beneficial after treatment.",
             "value": "ERS",
             "title": "Estrogen Receptor Status",
             "description": "o Estrogen Positive (ER+)\no Estrogen Negative (ER-)"
@@ -104,6 +107,8 @@
           "settings": {
             "stage": 1,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "HER2",
             "title": "HER2 Status",
             "description": "o HER2 Positive (HER2+)\no HER2 Negative (HER2-)"
@@ -114,6 +119,8 @@
           "settings": {
             "stage": 1,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "CS",
             "title": "Cancer Subtype",
             "description": "o Not applicable to me\no Triple Negative (TNBC)\no Triple Positive (TPBC)"
@@ -123,7 +130,9 @@
           "type": "option",
           "settings": {
             "stage": 2,
-            "question": "Are you postmenopausal?You are considered postmenopausal if you haven’t had a menstrual period for 12months or if your medical team has told you that you are.",
+            "question": "Are you postmenopausal?",
+            "subquestion": "You are considered postmenopausal if you haven’t had a menstrual period for 12months or if your medical team has told you that you are",
+            "why": "Why we ask:\nMenopause impacts your hormones, treatment path, and nutritional needs. Knowing\nyour menopausal status helps us:",
             "value": "yes",
             "title": "yes",
             "description": ""
@@ -134,6 +143,8 @@
           "settings": {
             "stage": 2,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "no",
             "title": "no",
             "description": ""
@@ -144,6 +155,8 @@
           "settings": {
             "stage": 3,
             "question": "“Are you currently taking any of the following medications?”",
+            "subquestion": "",
+            "why": "Why we ask: \nSome medications influence hormone levels, nutrient absorption, and immune function.Knowing this helps us avoid interactions and offer safer support.",
             "value": "IV",
             "title": "IV or Injectable Therapies",
             "description": ""
@@ -154,6 +167,8 @@
           "settings": {
             "stage": 3,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "cdk",
             "title": "CDK 4/6 Inhibitors",
             "description": ""
@@ -164,6 +179,8 @@
           "settings": {
             "stage": 3,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "ais",
             "title": "Aromatase Inhibitors (AIs)",
             "description": ""
@@ -174,6 +191,8 @@
           "settings": {
             "stage": 3,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "SERMs",
             "title": "SERMs (Selective Estrogen Receptor Modulators)",
             "description": ""
@@ -184,6 +203,8 @@
           "settings": {
             "stage": 3,
             "question": "",
+            "subquestion": "",
+            "why": "",
             "value": "SERDs",
             "title": "SERDs (Selective Estrogen Receptor Degraders)",
             "description": ""
@@ -214,7 +235,8 @@
         "bg_color": "#f9dee5",
         "image": "shopify://shop_images/Breast_Landing_Page_f609d583-07ee-4809-b645-00913d108fad.jpg",
         "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
+        "subheading": "Your treatment was breast cancer specific—now your supplements can be too.",
+        "why": "Why we ask:\nYour breast cancer subtype—like hormone receptor status, HER2 status, and other\nmarkers—can influence which nutrients are safe and beneficial after treatment."
       }
     }
   },
