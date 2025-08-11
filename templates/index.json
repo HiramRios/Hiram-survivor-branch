@@ -1109,25 +1109,34 @@
             "answer": "<p>this is the answer for test 1 </p>"
           }
         },
+        "faq_gPQmj3": {
+          "type": "faq",
+          "settings": {
+            "tab": "policy",
+            "question": "Test1",
+            "answer": "<p>this is the answer for test 1 </p>"
+          }
+        },
         "faq_8UDGKY": {
           "type": "faq",
           "settings": {
             "tab": "General",
-            "question": "",
-            "answer": ""
+            "question": "question for general",
+            "answer": "<p>answer for general </p>"
           }
         },
         "faq_XRCW7V": {
           "type": "faq",
           "settings": {
             "tab": "shipping",
-            "question": "",
-            "answer": ""
+            "question": "question for shipping",
+            "answer": "<p>answer for shipping </p>"
           }
         }
       },
       "block_order": [
         "faq_YrzFGc",
+        "faq_gPQmj3",
         "faq_8UDGKY",
         "faq_XRCW7V"
       ],
