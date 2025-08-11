@@ -6,6 +6,26 @@
   assign columns = section.settings.columns
   assign animation_anchor = '#AccordionGroup--' | append: section.id
   assign animation_order = 0
+  assign enable_tabs = section.settings.enable_tabs
+
+  assign tabs_string = ''
+  for block in section.blocks
+    if block.type == 'question' and block.settings.tab_title != blank
+      assign tab_title = block.settings.tab_title | strip
+      assign tab_key = tab_title | handleize
+      assign needle = tab_key | append: '::'
+      unless tabs_string contains needle
+        capture tabs_string
+          echo tabs_string
+          echo tab_key
+          echo '::'
+          echo tab_title
+          echo '||'
+        endcapture
+      endunless
+    endif
+  endfor
+  assign tabs_array = tabs_string | split: '||' | reject: ''
 -%}
 
 {%- style -%}
@@ -39,44 +59,166 @@
       data-section-id="{{ section.id }}"
       data-section-type="faq"
     >
-      <collapsible-elements single="true">
-        <div class="accordion-group__items">
-          {%- for block in section.blocks -%}
-            {%- liquid
-              assign title = block.settings.title
-              assign content = block.settings.content
-              assign default_open = block.settings.default_open
-            -%}
+      {%- if enable_tabs and tabs_array.size > 1 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'heading' -%}
+            {%- assign animation_order = animation_order | plus: 1 -%}
+            <div class="cstm_accrdian_cls--1">
+              <h3
+                class="accordion__heading h4"
+                data-aos="hero"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-order="{{ animation_order }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- if block.settings.title != blank -%}
+                  {{ block.settings.title }}
+                {%- endif -%}
+              </h3>
+              {%- if block.settings.subheading != blank -%}
+                <p>{{ block.settings.subheading }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
 
-            {%- if block.type == 'heading' -%}
-              {%- assign animation_order = animation_order | plus: 1 -%}
-              <div class="cstm_accrdian_cls--1">
-                <h3
-                  class="accordion__heading h4"
-                  data-aos="hero"
-                  data-aos-anchor="{{ animation_anchor }}"
-                  data-aos-order="{{ animation_order }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% if title != blank %}
-                    {{ title }}
-                  {% endif %}
-                </h3>
-                {% if block.settings.subheading != blank %}
-                  <p>{{ block.settings.subheading }}</p>
-                {% endif %}
+        <div class="tabs-wrapper" data-tabs-holder>
+          <div class="tabs__head">
+            <ul class="tabs" data-scrollbar data-scrollbar-slider>
+              {%- for tab_entry in tabs_array -%}
+                {%- assign parts = tab_entry | split: '::' -%}
+                {%- assign tab_key = parts[0] -%}
+                {%- assign tab_title = parts[1] -%}
+                {%- if tab_title != blank -%}
+                  <li class="tab-link tab-link-{{ forloop.index0 }}{% if forloop.first %} current{% endif %}" data-tab="{{ forloop.index0 }}" tabindex="0">
+                    <span>{{ tab_title }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          {%- for tab_entry in tabs_array -%}
+            {%- assign parts = tab_entry | split: '::' -%}
+            {%- assign tab_key = parts[0] -%}
+            {%- assign tab_title = parts[1] -%}
+            {%- if tab_title != blank -%}
+              <div class="tab-content tab-content-{{ forloop.index0 }}{% if forloop.first %} current{% endif %}" data-tab-index="{{ forloop.index0 }}">
+                <collapsible-elements single="true">
+                  <div class="accordion-group__items">
+                    {%- assign animation_order = 0 -%}
+                    {%- for block in section.blocks -%}
+                      {%- if block.type == 'question' and block.settings.tab_title | handleize == tab_key -%}
+                        {%- assign title = block.settings.title -%}
+                        {%- assign content = block.settings.content -%}
+                        {%- assign default_open = block.settings.default_open -%}
+                        {%- if title != blank and content != blank -%}
+                          {%- assign animation_order = animation_order | plus: 1 -%}
+                          <details
+                            class="accordion"
+                            data-collapsible
+                            {% if default_open %}open="true"{% endif %}
+                            {{ block.shopify_attributes }}
+                          >
+                            <summary class="accordion__title h6" data-collapsible-trigger>
+                              {%- if block.settings.show_icon -%}
+                                {%- liquid
+                                  assign icon_size = block.settings.icon_size
+                                  assign icon_color = block.settings.icon_color
+                                  assign icon_image = block.settings.icon_image
+                                  capture icon_style
+                                    echo 'style="'
+                                    echo '--icon-size: ' | append: icon_size | append: 'px;'
+                                    if icon_color != blank and icon_color != 'rgba(0,0,0,0)'
+                                      echo ' --text: ' | append: icon_color | append: ';'
+                                    endif
+                                    echo '"'
+                                  endcapture
+                                -%}
+
+                                <div
+                                  class="icon__animated icon__animated--{{ block.id }}{% if icon_image != blank %} icon__animated--image{% endif %}"
+                                  {{ icon_style }}
+                                >
+                                  {%- liquid
+                                    if icon_image
+                                      assign icon_width = icon_size
+                                      assign icon_width_retina = icon_width | times: 2
+                                      assign icon_sizes = icon_width | append: 'px'
+                                      assign icon_widths = icon_width | append: ', ' | append: icon_width_retina
+
+                                      render 'image', image: icon_image, width: icon_width_retina, sizes: icon_sizes, widths: icon_widths
+                                    else
+                                      render 'animated-icon', filename: block.settings.icon_name
+                                    endif
+                                  -%}
+                                </div>
+                              {%- endif -%}
+
+                              {{ title }}
+                              {%- render 'arrow-up' -%}
+                              {%- render 'arrow-down' -%}
+                            </summary>
+
+                            <div
+                              class="accordion__body rte"
+                              {% if default_open != blank %}style="height: auto;"{% endif %}
+                              data-collapsible-body
+                            >
+                              <div class="accordion__content" data-collapsible-content>
+                                {{ content }}
+                              </div>
+                            </div>
+                          </details>
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                    <div class="faq-checkmore">
+                      Got more questions? <a href="/pages/help-center">Check out our FAQ page</a>
+                    </div>
+                  </div>
+                </collapsible-elements>
               </div>
             {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <collapsible-elements single="true">
+          <div class="accordion-group__items">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign title = block.settings.title
+                assign content = block.settings.content
+                assign default_open = block.settings.default_open
+              -%}
 
-            {%- if block.type == 'question' and title != blank and content != blank -%}
-              {%- if title != blank -%}
+              {%- if block.type == 'heading' -%}
+                {%- assign animation_order = animation_order | plus: 1 -%}
+                <div class="cstm_accrdian_cls--1">
+                  <h3
+                    class="accordion__heading h4"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ animation_order }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if title != blank -%}
+                      {{ title }}
+                    {%- endif -%}
+                  </h3>
+                  {%- if block.settings.subheading != blank -%}
+                    <p>{{ block.settings.subheading }}</p>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.type == 'question' and title != blank and content != blank -%}
                 {%- assign animation_order = animation_order | plus: 1 -%}
                 <details
                   class="accordion"
                   data-collapsible
-                  {% if default_open %}
-                    open="true"
-                  {% endif %}
+                  {% if default_open %}open="true"{% endif %}
                   {{ block.shopify_attributes }}
                 >
                   <summary class="accordion__title h6" data-collapsible-trigger>
@@ -115,20 +257,13 @@
                     {%- endif -%}
 
                     {{ title }}
-                    {% comment %}
-                      {%- render 'icon-plus' -%}
-
-                      {%- render 'icon-minus' -%}
-                    {% endcomment %}
                     {%- render 'arrow-up' -%}
                     {%- render 'arrow-down' -%}
                   </summary>
 
                   <div
                     class="accordion__body rte"
-                    {% if default_open != blank %}
-                      style="height: auto;"
-                    {% endif %}
+                    {% if default_open != blank %}style="height: auto;"{% endif %}
                     data-collapsible-body
                   >
                     <div class="accordion__content" data-collapsible-content>
@@ -137,14 +272,14 @@
                   </div>
                 </details>
               {%- endif -%}
-            {%- endif -%}
-          {%- endfor -%}
+            {%- endfor -%}
 
-          <div class="faq-checkmore">
-            Got more questions? <a href="/pages/help-center">Check out our FAQ page</a>
+            <div class="faq-checkmore">
+              Got more questions? <a href="/pages/help-center">Check out our FAQ page</a>
+            </div>
           </div>
-        </div>
-      </collapsible-elements>
+        </collapsible-elements>
+      {%- endif -%}
     </div>
   {%- endif -%}
 </div>
@@ -153,7 +288,7 @@
 {
   "name": "Accordion group",
   "settings": [
-      {
+    {
       "type": "text",
       "id": "cstm_cls",
       "label": "Custom Class"
@@ -177,6 +312,12 @@
         { "value": "1", "label": "One" },
         { "value": "2", "label": "Two" }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_tabs",
+      "label": "Enable tabs",
+      "default": false
     },
     {
       "type": "header",
@@ -233,11 +374,10 @@
           "label": "Heading",
           "default": "FAQ"
         },
-         {
+        {
           "type": "richtext",
           "id": "subheading",
           "label": "Sub Heading"
-
         }
       ]
     },
@@ -250,6 +390,12 @@
           "id": "default_open",
           "label": "Open by default",
           "default": false
+        },
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab title",
+          "default": "General"
         },
         {
           "type": "text",
@@ -348,18 +494,10 @@
       "name": "Accordion group",
       "category": "Text",
       "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "question"
-        },
-        {
-          "type": "question"
-        },
-        {
-          "type": "question"
-        }
+        { "type": "heading" },
+        { "type": "question" },
+        { "type": "question" },
+        { "type": "question" }
       ]
     }
   ],
