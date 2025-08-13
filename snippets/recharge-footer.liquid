@@ -735,15 +735,22 @@
           }
           if ($('.yno-cancel').length == 0) {
             const skipBtn = $('[data-testid="recharge-internal-skip-button"]');
+            const sendNowBtn = $('[data-testid="recharge-internal-send-now-button"], [data-testid="recharge-internal-sendnow-button"]');
+
+            sendNowBtn.wrap('<div class="yno-action-wrap"></div>');
+            rescheduleBtn.wrap('<div class="yno-action-wrap"></div>');
+            skipBtn.wrap('<div class="yno-action-wrap"></div>');
+
             const cancelBtn = skipBtn.clone();
             cancelBtn.attr('data-testid', 'recharge-internal-cancel-button');
             cancelBtn.addClass('yno-cancel');
             cancelBtn.find('span').text('Cancel');
-            cancelBtn.css('margin-left', '20px');
             cancelBtn.find('.recharge-icon').html(`
               <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.143 4h13.714M2.857 4h10.286v10.286A1.143 1.143 0 0 1 12 15.429H4a1.143 1.143 0 0 1-1.143-1.143V4ZM5.143 4v-.571a2.857 2.857 0 0 1 5.714 0V4M6.286 7.43v4.573M9.714 7.43v4.573"></path></g></svg>
             `);
-            skipBtn.after(cancelBtn);
+            const cancelWrapper = $('<div class="yno-action-wrap"></div>').append(cancelBtn);
+            skipBtn.closest('.yno-action-wrap').after(cancelWrapper);
+
             $('body').append(`
               <div class="cancel-popup">
                 <div class="cancel-popup__overlay"></div>
