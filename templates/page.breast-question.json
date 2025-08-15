@@ -47,9 +47,10 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+) on SERMs",
+            "title": "Estrogen Positive (ER+) ",
             "description": "Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)</b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen.",
-            "product": "",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -61,7 +62,8 @@
             "parent": "",
             "title": "Hormone-Positive (ER+)",
             "description": "Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers </b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)</b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s).",
-            "product": "",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -73,7 +75,8 @@
             "parent": "",
             "title": "Hormone-Negative (ER-)",
             "description": "Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness.",
-            "product": "breast-er-support",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -85,7 +88,8 @@
             "parent": "Hormone-Positive (ER+) on SERMs",
             "title": "Not yet (Premenopausal)",
             "description": "Regular periods = Premenopausal",
-            "product": "wellsurvivor-breast-er-negative",
+            "value": "",
+            "url": "",
             "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
             "step_subheading": "“Have you gone through menopause yet?”"
           }
@@ -97,7 +101,8 @@
             "parent": "Hormone-Positive (ER+) on SERMs",
             "title": "In transition (Perimenopausal)",
             "description": "Irregular = Perimenopausal",
-            "product": "wellsurvivor-breast-er-tx",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -109,7 +114,8 @@
             "parent": "Hormone-Positive (ER+) on SERMs",
             "title": "Yes (Postmenopausal)",
             "description": "No periods for 12+ months = Postmenopausal",
-            "product": "",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -121,7 +127,8 @@
             "parent": "Yes (Postmenopausal)",
             "title": "I’m not taking any cancer-related medications",
             "description": "",
-            "product": "wellsurvivor-breast-er-tx",
+            "value": "",
+            "url": "",
             "step_heading": "“Are you currently taking any of the following medications?”",
             "step_subheading": ""
           }
@@ -133,7 +140,8 @@
             "parent": "Yes (Postmenopausal)",
             "title": "Aromatase Inhibitors (AIs) ℹ️",
             "description": "",
-            "product": "wellsurvivor-breast-er-negative",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -145,7 +153,8 @@
             "parent": "Yes (Postmenopausal)",
             "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
             "description": "",
-            "product": "wellsurvivor-breast-er-negative",
+            "value": "",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -169,7 +178,7 @@
         "padding_bottom": 0,
         "image": "shopify://shop_images/Breast_Landing_Page_6d2c7a8d-c971-4e65-873d-b8f230dbc2f9.jpg",
         "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
+        "subheading": "What was your breast cancer Estrogen Receptor Status?"
       }
     }
   },
