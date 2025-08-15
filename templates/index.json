@@ -1105,7 +1105,7 @@
           "type": "faq",
           "settings": {
             "tab": "General Questions",
-            "question": "General 1",
+            "question": "How long after  cancer treatment can I start taking Well Survivor Prostate",
             "answer": "<p>general answer1</p>"
           }
         },
@@ -1113,7 +1113,39 @@
           "type": "faq",
           "settings": {
             "tab": "General Questions",
-            "question": "General 2",
+            "question": "Will your WellSurvivor Prostate Product increase my testostorone levels?",
+            "answer": "<p>General answer 2</p>"
+          }
+        },
+        "faq_yaxecb": {
+          "type": "faq",
+          "settings": {
+            "tab": "General Questions",
+            "question": "Do I need to have a history of Prostate Cancer to benefit from the WellSurvivor Prostate product?",
+            "answer": "<p>General answer 2</p>"
+          }
+        },
+        "faq_QgMz9t": {
+          "type": "faq",
+          "settings": {
+            "tab": "General Questions",
+            "question": "Are your supplements manafactured in FDA-certified facilities and tested for quality and safety?",
+            "answer": "<p>General answer 2</p>"
+          }
+        },
+        "faq_mr3yE3": {
+          "type": "faq",
+          "settings": {
+            "tab": "General Questions",
+            "question": "Can I use my HSA/FSA funds on SurvivorRx products?",
+            "answer": "<p>General answer 2</p>"
+          }
+        },
+        "faq_R6cJeC": {
+          "type": "faq",
+          "settings": {
+            "tab": "General Questions",
+            "question": "can I cancel or change my subscription easily?",
             "answer": "<p>General answer 2</p>"
           }
         },
@@ -1153,6 +1185,10 @@
       "block_order": [
         "faq_qxXNp6",
         "faq_3ia7xJ",
+        "faq_yaxecb",
+        "faq_QgMz9t",
+        "faq_mr3yE3",
+        "faq_R6cJeC",
         "faq_fnjBLH",
         "faq_fXPHYc",
         "faq_LpKj3V",
