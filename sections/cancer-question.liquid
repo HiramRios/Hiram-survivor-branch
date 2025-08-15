@@ -102,8 +102,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var blocks = [
-      {% for block in section.blocks %}
+    var questionBlocks = [
+      {% assign question_blocks = section.blocks | where: 'type', 'question' %}
+      {% for block in question_blocks %}
         {
           step: {{ block.settings.step }},
           parent: {{ block.settings.parent | json }},
@@ -111,24 +112,41 @@
           description: {{ block.settings.description | json }},
           heading: {{ block.settings.step_heading | json }},
           subheading: {{ block.settings.step_subheading | json }},
-          url: {{ "/products/" | append: block.settings.product.handle | json }}
+          value: {{ block.settings.value | json }},
+          url: {{ block.settings.url | json }}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
 
+    var resultMap = {
+      {% assign result_blocks = section.blocks | where: 'type', 'result' %}
+      {% for block in result_blocks %}
+        {{ block.settings.combination | json }}: {{ block.settings.url | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    };
+
     var container = document.getElementById('quiz-container');
     var currentStep = 1;
     var lastUrl = null;
+    var answers = {};
 
     function render(step, parentTitle) {
       container.innerHTML = '';
 
-      var choices = blocks.filter(function (b) {
+      var choices = questionBlocks.filter(function (b) {
         return b.step === step && (step === 1 || b.parent === parentTitle);
       });
 
       if (!choices.length) {
-        return window.location.href = lastUrl;
+        var keyParts = [];
+        for (var i = 1; i < step; i++) {
+          keyParts.push(answers[i]);
+        }
+        var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
+        if (finalUrl) {
+          window.location.href = finalUrl;
+        }
+        return;
       }
 
       // Dynamic heading and subheading update
@@ -142,6 +160,7 @@
         card.className = 'cancer-question__block';
         card.dataset.url = b.url;
         card.dataset.title = b.title;
+        card.dataset.value = b.value;
         card.innerHTML = `
           <div class="cancer-question__block-content">
             <div class="cancer-question__block-icon"></div>
@@ -157,12 +176,22 @@
     container.addEventListener('click', function (e) {
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
+      answers[currentStep] = card.dataset.value;
+      var keyParts = [];
+      for (var i = 1; i <= currentStep; i++) {
+        keyParts.push(answers[i]);
+      }
+      var partialUrl = resultMap[keyParts.join('|')];
+      if (partialUrl) {
+        window.location.href = partialUrl;
+        return;
+      }
       lastUrl = card.dataset.url;
       currentStep++;
       render(currentStep, card.dataset.title);
     });
 
-    if (blocks.length) render(1);
+    if (questionBlocks.length) render(1);
 
     var chatBtn = document.querySelector('.cancer-question__chat-button');
     if (chatBtn) {
@@ -195,9 +224,18 @@
         { "type": "text", "id": "parent", "label": "Parent Answer Title (leave blank for step 1)" },
         { "type": "text", "id": "title", "label": "Answer Text" },
         { "type": "textarea", "id": "description", "label": "Description" },
-        { "type": "product", "id": "product", "label": "Product to Link To" },
+        { "type": "text", "id": "value", "label": "Answer Value" },
+        { "type": "url", "id": "url", "label": "URL to Link To (optional)" },
         { "type": "text", "id": "step_heading", "label": "Step Heading (optional)" },
         { "type": "text", "id": "step_subheading", "label": "Step Subheading (optional)" }
+      ]
+    },
+    {
+      "type": "result",
+      "name": "Result Mapping",
+      "settings": [
+        { "type": "text", "id": "combination", "label": "Answer Combination (value1|value2|...)" },
+        { "type": "url", "id": "url", "label": "Result URL" }
       ]
     }
   ],
