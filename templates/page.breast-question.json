@@ -192,7 +192,7 @@
           "type": "question",
           "settings": {
             "step": 1,
-            "parent": "",
+            "parent": "Estrogen Positive (ER+) ",
             "title": "I’ve had multiple breast cancers",
             "description": "",
             "value": "",
@@ -205,39 +205,39 @@
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "What is your HER2 status?",
+            "parent": "Estrogen Positive (ER+) ",
             "title": "HER2 Positive ",
             "description": "",
             "value": "",
             "url": "",
-            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
-            "step_subheading": "“Have you gone through menopause yet?”"
+            "step_heading": "What is your HER2 status?",
+            "step_subheading": ""
           }
         },
         "question_mQLTTr": {
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "What is your HER2 status?",
+            "parent": "Estrogen Positive (ER+) ",
             "title": "TPBC (Triple-Positive Breast Cancer)",
             "description": "",
             "value": "",
             "url": "",
-            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
-            "step_subheading": "“Have you gone through menopause yet?”"
+            "step_heading": "What is your HER2 status?",
+            "step_subheading": ""
           }
         },
         "question_TcqVMa": {
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "What is your HER2 status?",
+            "parent": "Estrogen Positive (ER+) ",
             "title": "TNBC (Triple-Negative Breast Cancer)",
             "description": "",
             "value": "",
             "url": "",
-            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
-            "step_subheading": "“Have you gone through menopause yet?”"
+            "step_heading": "What is your HER2 status?",
+            "step_subheading": ""
           }
         }
       },
