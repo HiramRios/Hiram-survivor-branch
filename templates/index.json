@@ -1204,7 +1204,11 @@
         "padding_top": 36,
         "padding_bottom": 36,
         "bg_color": "#ffffff",
-        "text_color": "#000000"
+        "text_color": "#000000",
+        "heading_font": "poppins_n7",
+        "heading_font_size": 48,
+        "question_font": "poppins_n5",
+        "question_font_size": 16
       }
     }
   },
