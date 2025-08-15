@@ -8273,3 +8273,36 @@ ul.blog-search-nav li a:hover {
     width: 15px;
     height: 15px;
 }
+
+/* Recharge schedule action buttons */
+.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
+.recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 12px;
+}
+
+@media (min-width: 768px) {
+    .recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
+    .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+        width: 25%;
+        margin: 0 5px;
+        display: inline-block;
+    }
+}
+
+.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"] {
+    background-color: var(--recharge-button-brand);
+    border-color: var(--recharge-button-brand);
+    color: var(--recharge-button-color);
+}
+
+.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"]:hover {
+    background-color: var(--recharge-color-brand-120);
+    border-color: var(--recharge-color-brand-120);
+}
+
