@@ -752,24 +752,20 @@
             const actionButtons = $(
               '[data-testid="recharge-internal-send-now-button"], [data-testid="recharge-internal-reschedule-button"], [data-testid="recharge-internal-skip-button"], [data-testid="recharge-internal-cancel-button"]'
             );
-            const actionWrappers = actionButtons.parent().removeAttr('style');
+            const actionWrappers = actionButtons
+              .parent()
+              .removeAttr('style')
+              .addClass('recharge-action');
+            const actionsContainer = actionWrappers.parent().first();
             function sizeRechargeActions() {
               if (window.matchMedia('(min-width: 768px)').matches) {
-                actionWrappers.css({
-                  width: '25%',
-                  padding: '0 10px',
-                  margin: 0,
-                  display: 'inline-block',
-                  'box-sizing': 'border-box'
-                });
+                actionsContainer.css({ display: 'flex', gap: '10px' });
+                actionWrappers.css({ flex: '1', margin: 0, padding: 0 });
+                cancelWrapper.css('margin-top', '0');
               } else {
-                actionWrappers.css({
-                  width: '100%',
-                  padding: 0,
-                  margin: '0 0 20px 0',
-                  display: 'block',
-                  'box-sizing': 'border-box'
-                });
+                actionsContainer.css({ display: 'block' });
+                actionWrappers.css({ width: '100%', margin: '0 0 10px 0', padding: 0 });
+                cancelWrapper.css('margin-top', '20px');
               }
               actionButtons.css({ width: '100%', margin: 0 });
             }
