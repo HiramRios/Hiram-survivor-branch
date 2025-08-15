@@ -205,78 +205,39 @@
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "Not yet (Premenopausal)",
-            "description": "Regular periods = Premenopausal",
+            "parent": "What is your HER2 status?",
+            "title": "HER2 Positive ",
+            "description": "",
             "value": "",
             "url": "",
             "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
             "step_subheading": "“Have you gone through menopause yet?”"
           }
         },
-        "question_crbwbY": {
+        "question_mQLTTr": {
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "In transition (Perimenopausal)",
-            "description": "Irregular = Perimenopausal",
+            "parent": "What is your HER2 status?",
+            "title": "TPBC (Triple-Positive Breast Cancer)",
+            "description": "",
             "value": "",
             "url": "",
-            "step_heading": "",
-            "step_subheading": ""
+            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
+            "step_subheading": "“Have you gone through menopause yet?”"
           }
         },
-        "question_FLtyAF": {
+        "question_TcqVMa": {
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "Yes (Postmenopausal)",
-            "description": "No periods for 12+ months = Postmenopausal",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_xKDnkp": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "I’m not taking any cancer-related medications",
+            "parent": "What is your HER2 status?",
+            "title": "TNBC (Triple-Negative Breast Cancer)",
             "description": "",
             "value": "",
             "url": "",
-            "step_heading": "“Are you currently taking any of the following medications?”",
-            "step_subheading": ""
-          }
-        },
-        "question_pqrqqq": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "Aromatase Inhibitors (AIs) ℹ️",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_bkxNam": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
+            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
+            "step_subheading": "“Have you gone through menopause yet?”"
           }
         }
       },
@@ -288,11 +249,8 @@
         "question_Hik3Uq",
         "question_zAAPgh",
         "question_kmpQk6",
-        "question_crbwbY",
-        "question_FLtyAF",
-        "question_xKDnkp",
-        "question_pqrqqq",
-        "question_bkxNam"
+        "question_mQLTTr",
+        "question_TcqVMa"
       ],
       "name": "Cancer Quiz",
       "settings": {
