@@ -141,8 +141,8 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+) on SERMs",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)</b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen.",
+            "title": "Estrogen Positive (ER+) ",
+            "description": "",
             "value": "",
             "url": "",
             "step_heading": "",
@@ -154,8 +154,8 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+)",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers </b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)</b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s).",
+            "title": "Estrogen Negative (ER-)",
+            "description": "",
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
             "step_heading": "",
@@ -167,8 +167,34 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Negative (ER-)",
-            "description": "Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness.",
+            "title": "Estrogen Positive (ER+) DCIS ",
+            "description": "",
+            "value": "",
+            "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_Hik3Uq": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "Estrogen Negative (ER-) DCIS ",
+            "description": "",
+            "value": "",
+            "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_zAAPgh": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "I’ve had multiple breast cancers",
+            "description": "",
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
             "step_heading": "",
@@ -259,6 +285,8 @@
         "question_X4MB7n",
         "question_khEiwH",
         "question_MAWC3w",
+        "question_Hik3Uq",
+        "question_zAAPgh",
         "question_kmpQk6",
         "question_crbwbY",
         "question_FLtyAF",
