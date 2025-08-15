@@ -15,6 +15,8 @@
 
 {%- if section.blocks.size > 0 -%}
   {%- style -%}
+    {{ section.settings.heading_font | font_face }}
+    {{ section.settings.question_font | font_face }}
     #FaqTabs--{{ section.id }}{
       --PT: {{ section.settings.padding_top }}px;
       --PB: {{ section.settings.padding_bottom }}px;
@@ -23,6 +25,14 @@
       --card-shadow: 0 1px 0 rgba(0,0,0,.04), 0 6px 16px rgba(0,0,0,.06);
       --tab-accent: #1d6a3a;
       --muted: #6b7280;
+      --heading-font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+      --heading-font-weight: {{ section.settings.heading_font.weight }};
+      --heading-font-style: {{ section.settings.heading_font.style }};
+      --heading-font-size: {{ section.settings.heading_font_size }}px;
+      --question-font-family: {{ section.settings.question_font.family }}, {{ section.settings.question_font.fallback_families }};
+      --question-font-weight: {{ section.settings.question_font.weight }};
+      --question-font-style: {{ section.settings.question_font.style }};
+      --question-font-size: {{ section.settings.question_font_size }}px;
       {%- unless bg_color == 'rgba(0,0,0,0)' or bg_color == blank -%}
         --bg: {{ bg_color }};
       {%- endunless -%}
@@ -46,9 +56,11 @@
     #FaqTabs--{{ section.id }} .faq__title{
       text-align: center;
       margin: 0 0 .25rem;
-      font-size: clamp(22px, 3.6vw, 32px);
+      font-size: var(--heading-font-size);
       line-height: 1.15;
-      font-weight: 700;
+      font-family: var(--heading-font-family);
+      font-weight: var(--heading-font-weight);
+      font-style: var(--heading-font-style);
     }
     #FaqTabs--{{ section.id }} .faq__subtitle{
       text-align: center;
@@ -122,8 +134,10 @@
       padding: 18px 20px;
       cursor: pointer;
       position: relative;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: var(--question-font-size);
+      font-family: var(--question-font-family);
+      font-weight: var(--question-font-weight);
+      font-style: var(--question-font-style);
     }
     #FaqTabs--{{ section.id }} summary.accordion__title::-webkit-details-marker{ display:none; }
 
@@ -328,7 +342,11 @@
       "label": "Padding bottom", "default": 36
     },
     { "type": "color", "id": "bg_color", "label": "Background color", "default": "#F7F7F7" },
-    { "type": "color", "id": "text_color", "label": "Text color", "default": "#0f172a" }
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#0f172a" },
+    { "type": "font_picker", "id": "heading_font", "label": "Heading font", "default": "poppins_n7" },
+    { "type": "range", "id": "heading_font_size", "min": 16, "max": 80, "step": 1, "unit": "px", "label": "Heading font size", "default": 32 },
+    { "type": "font_picker", "id": "question_font", "label": "Question font", "default": "poppins_n5" },
+    { "type": "range", "id": "question_font_size", "min": 12, "max": 40, "step": 1, "unit": "px", "label": "Question font size", "default": 16 }
   ],
   "blocks": [
     {
