@@ -102,6 +102,12 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Normalize "shopify://..." deep links to real storefront paths
+    function normalizeUrl(u) {
+      if (!u) return "";
+      return u.indexOf('shopify://') === 0 ? u.replace('shopify://', '/') : u;
+    }
+
     var questionBlocks = [
       {% assign question_blocks = section.blocks | where: 'type', 'question' %}
       {% for block in question_blocks %}
@@ -144,7 +150,7 @@
         }
         var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
         if (finalUrl) {
-          window.location.href = finalUrl;
+          window.location.href = normalizeUrl(finalUrl);
         }
         return;
       }
@@ -158,7 +164,7 @@
       choices.forEach(function (b) {
         var card = document.createElement('div');
         card.className = 'cancer-question__block';
-        card.dataset.url = b.url;
+        card.dataset.url = normalizeUrl(b.url);
         card.dataset.title = b.title;
         card.dataset.value = b.value;
         card.innerHTML = `
@@ -166,7 +172,7 @@
             <div class="cancer-question__block-icon"></div>
             <div class="cancer-question__block-text">
               <p class="cancer-question__block-text--title">${b.title}</p>
-              <p class="cancer-question__block-text--desc">${b.description}</p>
+              <p class="cancer-question__block-text--desc">${b.description || ''}</p>
             </div>
           </div>`;
         container.appendChild(card);
@@ -183,10 +189,10 @@
       }
       var partialUrl = resultMap[keyParts.join('|')];
       if (partialUrl) {
-        window.location.href = partialUrl;
+        window.location.href = normalizeUrl(partialUrl);
         return;
       }
-      lastUrl = card.dataset.url;
+      lastUrl = normalizeUrl(card.dataset.url);
       currentStep++;
       render(currentStep, card.dataset.title);
     });
@@ -201,8 +207,6 @@
     }
   });
 </script>
-
-
 
 {% schema %}
 {
