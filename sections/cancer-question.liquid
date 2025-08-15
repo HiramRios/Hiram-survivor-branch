@@ -1,69 +1,39 @@
+<!-- sections/cancer-quiz.liquid -->
 <div class="cancer-question">
   <div class="container">
     <div class="cancer-question__image">
-      <img src="{{ section.settings.image | img_url: 'master' }}" alt="Image">
+      {% if section.settings.image %}
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.heading }}">
+      {% endif %}
     </div>
+
     <div class="cancer-question__content">
       <div class="cancer-question__content-wrapper">
         <div class="cancer-question__text">
           <h2>{{ section.settings.heading }}</h2>
           <p>{{ section.settings.subheading }}</p>
         </div>
-        <div class="cancer-question__blocks">
-          {%- assign current_stage = '' -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'option' -%}
-              {%- assign block_stage = block.settings.stage | append: '' -%}
-              {%- if current_stage != block_stage -%}
-                {%- unless current_stage == '' -%}</div>{%- endunless -%}
-                <div class="cancer-question__stage" data-stage="{{ block_stage }}"{%- unless current_stage == '' -%} style="display:none"{%- endunless -%}>
-                  <p class="cancer-question__question-text">{{ block.settings.question }}</p>
-                {%- assign current_stage = block_stage -%}
-              {%- endif -%}
-              <div class="cancer-question__block" data-stage="{{ block.settings.stage }}" data-value="{{ block.settings.value }}">
-                <div class="cancer-question__block-content">
-                  <div class="cancer-question__block-icon"></div>
-                  <div class="cancer-question__block-text">
-                    <p class="cancer-question__block-text--title">{{ block.settings.title }}</p>
-                    <p class="cancer-question__block-text--desc">{{ block.settings.description }}</p>
-                  </div>
-                </div>
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
-          {%- if current_stage != '' -%}</div>{%- endif -%}
-          <!-- New answer option with link to quiz -->
-          <div class="cancer-question__block" data-url="/pages/quiz">
-            <div class="cancer-question__block-content">
-              <div class="cancer-question__block-icon"></div>
-              <div class="cancer-question__block-text">
-                <p class="cancer-question__block-text--title">Need More Guidance?</p>
-                <p class="cancer-question__block-text--desc">Take our oncologist- and naturopath-designed quiz for a fully personalized, cancer survivor-specific wellness routine.</p>
-              </div>
-            </div>
-          </div>
+
+        <div class="cancer-question__blocks" id="quiz-container">
+          {% if section.blocks.size == 0 %}
+            <p class="cancer-question__no-blocks" style="text-align:center;color:#999;">No quiz options defined. Please add Answer Option blocks in the Theme Editor.</p>
+          {% endif %}
         </div>
-        <div class="canver-question__buttons">
-          <p style="color: #333333;"><strong>Need quick help? Chat with us!</strong></p>
-        </div>
+      </div>
+
+      <div class="canver-question__buttons">
+        <p style="color: #333333; text-align: center"><strong>Need quick help? Chat with us!</strong></p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Styles for the updated layout -->
 <style>
   .cancer-question .container {
     background-color: {{ section.settings.bg_color }};
     display: flex;
-  }
-
-  .cancer-question__stage {
-    width: 100%;
-  }
-
-  .cancer-question__question-text {
-    font-weight: bold;
-    margin-bottom: 15px;
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
   }
 
   .cancer-question__block {
@@ -72,10 +42,11 @@
     align-items: center;
     padding: 20px;
     border: 2px solid #ccc;
-    border-radius: 20px;
+    border-radius: 20px; 
     margin-bottom: 20px;
     background-color: #fff;
     width: 100%;
+    transition: background-color 0.2s ease;
   }
 
   .cancer-question__block:hover {
@@ -113,127 +84,163 @@
     font-size: 14px;
   }
 
-  .quiz-button {
-    display: none; /* Hide the original quiz button */
+  .cancer-question__chat-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cancer-question__buttons {
+    margin-top: 20px;
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var answers = {};
-    var totalStages = document.querySelectorAll('.cancer-question__stage').length;
+  document.addEventListener('DOMContentLoaded', function () {
+    var questionBlocks = [
+      {% assign question_blocks = section.blocks | where: 'type', 'question' %}
+      {% for block in question_blocks %}
+        {
+          step: {{ block.settings.step }},
+          parent: {{ block.settings.parent | json }},
+          title: {{ block.settings.title | json }},
+          description: {{ block.settings.description | json }},
+          heading: {{ block.settings.step_heading | json }},
+          subheading: {{ block.settings.step_subheading | json }},
+          value: {{ block.settings.value | json }},
+          url: {{ block.settings.url | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
 
     var resultMap = {
-      {%- assign result_blocks = section.blocks | where: 'type', 'result' -%}
-      {%- for block in result_blocks -%}
-        "{{ block.settings.combination }}": "{{ block.settings.product.url }}"{%- unless forloop.last -%},{%- endunless -%}
-      {%- endfor -%}
+      {% assign result_blocks = section.blocks | where: 'type', 'result' %}
+      {% for block in result_blocks %}
+        {{ block.settings.combination | json }}: {{ block.settings.url | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     };
 
-    document.addEventListener('click', function(e) {
-      var target = e.target.closest('.cancer-question__block');
-      if (!target) return;
-      var url = target.getAttribute('data-url');
-      if (url) {
-        window.location.href = url;
+    var container = document.getElementById('quiz-container');
+    var currentStep = 1;
+    var lastUrl = null;
+    var answers = {};
+
+    function render(step, parentTitle) {
+      container.innerHTML = '';
+
+      var choices = questionBlocks.filter(function (b) {
+        return b.step === step && (step === 1 || b.parent === parentTitle);
+      });
+
+      if (!choices.length) {
+        var keyParts = [];
+        for (var i = 1; i < step; i++) {
+          keyParts.push(answers[i]);
+        }
+        var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
+        if (finalUrl) {
+          window.location.href = finalUrl;
+        }
         return;
       }
-      var stage = parseInt(target.getAttribute('data-stage'));
-      var value = target.getAttribute('data-value');
-      answers[stage] = value;
-      var nextStage = stage + 1;
-      if (nextStage <= totalStages) {
-        document.querySelectorAll('.cancer-question__stage').forEach(function(el) { el.style.display = 'none'; });
-        var next = document.querySelector('.cancer-question__stage[data-stage="' + nextStage + '"]');
-        if (next) { next.style.display = 'block'; }
-      } else {
-        var keyParts = [];
-        for (var i = 1; i <= totalStages; i++) { keyParts.push(answers[i]); }
-        var finalUrl = resultMap[keyParts.join('|')];
-        if (finalUrl) { window.location.href = finalUrl; }
+
+      // Dynamic heading and subheading update
+      var headingEl = document.querySelector('.cancer-question__text h2');
+      var subheadingEl = document.querySelector('.cancer-question__text p');
+      if (choices[0].heading && headingEl) headingEl.textContent = choices[0].heading;
+      if (choices[0].subheading && subheadingEl) subheadingEl.textContent = choices[0].subheading;
+
+      choices.forEach(function (b) {
+        var card = document.createElement('div');
+        card.className = 'cancer-question__block';
+        card.dataset.url = b.url;
+        card.dataset.title = b.title;
+        card.dataset.value = b.value;
+        card.innerHTML = `
+          <div class="cancer-question__block-content">
+            <div class="cancer-question__block-icon"></div>
+            <div class="cancer-question__block-text">
+              <p class="cancer-question__block-text--title">${b.title}</p>
+              <p class="cancer-question__block-text--desc">${b.description}</p>
+            </div>
+          </div>`;
+        container.appendChild(card);
+      });
+    }
+
+    container.addEventListener('click', function (e) {
+      var card = e.target.closest('.cancer-question__block');
+      if (!card) return;
+      answers[currentStep] = card.dataset.value;
+      var keyParts = [];
+      for (var i = 1; i <= currentStep; i++) {
+        keyParts.push(answers[i]);
       }
+      var partialUrl = resultMap[keyParts.join('|')];
+      if (partialUrl) {
+        window.location.href = partialUrl;
+        return;
+      }
+      lastUrl = card.dataset.url;
+      currentStep++;
+      render(currentStep, card.dataset.title);
     });
+
+    if (questionBlocks.length) render(1);
+
+    var chatBtn = document.querySelector('.cancer-question__chat-button');
+    if (chatBtn) {
+      chatBtn.addEventListener('click', function () {
+        if (typeof Intercom !== 'undefined') Intercom('show');
+      });
+    }
   });
 </script>
 
+
+
 {% schema %}
 {
-  "name": "Cancer Question",
+  "name": "Cancer Quiz",
   "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading"
-    }
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top", "label": "Padding Top (px)", "min": 0, "max": 100, "step": 5, "unit": "px", "default": 20 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom (px)", "min": 0, "max": 100, "step": 5, "unit": "px", "default": 20 },
+    { "type": "image_picker", "id": "image", "label": "Header Image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Need help finding the right product?" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Answer a few quick questions below." }
   ],
   "blocks": [
     {
-      "type": "option",
-      "name": "Question Option",
+      "type": "question",
+      "name": "Answer Option",
       "settings": [
-        {
-          "type": "number",
-          "id": "stage",
-          "label": "Stage Number"
-        },
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question"
-        },
-        {
-          "type": "text",
-          "id": "value",
-          "label": "Answer Value"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description"
-        }
+        { "type": "range", "id": "step", "label": "Step Number", "min": 1, "max": 10, "step": 1, "default": 1 },
+        { "type": "text", "id": "parent", "label": "Parent Answer Title (leave blank for step 1)" },
+        { "type": "text", "id": "title", "label": "Answer Text" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "value", "label": "Answer Value" },
+        { "type": "url", "id": "url", "label": "URL to Link To (optional)" },
+        { "type": "text", "id": "step_heading", "label": "Step Heading (optional)" },
+        { "type": "text", "id": "step_subheading", "label": "Step Subheading (optional)" }
       ]
     },
     {
       "type": "result",
       "name": "Result Mapping",
       "settings": [
-        {
-          "type": "text",
-          "id": "combination",
-          "label": "Answer Combination (value1|value2|...)"
-        },
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        }
+        { "type": "text", "id": "combination", "label": "Answer Combination (value1|value2|...)" },
+        { "type": "url", "id": "url", "label": "Result URL" }
       ]
     }
   ],
   "presets": [
-    {
-      "name": "Cancer Question"
-    }
+    { "name": "Cancer Quiz" }
   ]
 }
 {% endschema %}
