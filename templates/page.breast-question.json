@@ -129,6 +129,13 @@
     "cancer_question_9Xetih": {
       "type": "cancer-question",
       "blocks": {
+        "result_9E8XQV": {
+          "type": "result",
+          "settings": {
+            "combination": "",
+            "url": ""
+          }
+        },
         "question_X4MB7n": {
           "type": "question",
           "settings": {
@@ -150,7 +157,7 @@
             "title": "Hormone-Positive (ER+)",
             "description": "Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers </b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)</b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s).",
             "value": "",
-            "url": "",
+            "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -248,6 +255,7 @@
         }
       },
       "block_order": [
+        "result_9E8XQV",
         "question_X4MB7n",
         "question_khEiwH",
         "question_MAWC3w",
