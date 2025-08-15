@@ -8274,33 +8274,4 @@ ul.blog-search-nav li a:hover {
     height: 15px;
 }
 
-/* Recharge schedule action buttons */
-.recharge-component-schedule-item .recharge-action {
-    width: 100%;
-    margin: 0 0 10px 0;
-}
-
-.recharge-component-schedule-item .recharge-action button {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-    .recharge-component-schedule-item .recharge-action {
-        width: calc(25% - 10px);
-        margin: 0 5px;
-        display: inline-block;
-    }
-}
-
-.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"] {
-    background-color: var(--recharge-button-brand) !important;
-    border-color: var(--recharge-button-brand) !important;
-    color: var(--recharge-button-color) !important;
-}
-
-.recharge-component-schedule-item [data-testid="recharge-internal-send-now-button"]:hover {
-    background-color: var(--recharge-color-brand-120) !important;
-    border-color: var(--recharge-color-brand-120) !important;
-}
 

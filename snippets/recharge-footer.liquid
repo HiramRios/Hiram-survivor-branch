@@ -752,9 +752,37 @@
             const actionButtons = $(
               '[data-testid="recharge-internal-send-now-button"], [data-testid="recharge-internal-reschedule-button"], [data-testid="recharge-internal-skip-button"], [data-testid="recharge-internal-cancel-button"]'
             );
-            actionButtons.each(function () {
-              $(this).parent().addClass('recharge-action').removeAttr('style');
+            const actionWrappers = actionButtons.parent().removeAttr('style');
+            function sizeRechargeActions() {
+              if (window.matchMedia('(min-width: 768px)').matches) {
+                actionWrappers.css({ width: 'calc(25% - 10px)', margin: '0 5px', display: 'inline-block' });
+              } else {
+                actionWrappers.css({ width: '100%', margin: '0 0 20px 0', display: 'block' });
+              }
+              actionButtons.css('width', '100%');
+            }
+            sizeRechargeActions();
+            $(window).on('resize', sizeRechargeActions);
+            const sendNowBtn = $('[data-testid="recharge-internal-send-now-button"]');
+            sendNowBtn.css({
+              'background-color': 'var(--recharge-button-brand)',
+              'border-color': 'var(--recharge-button-brand)',
+              'color': 'var(--recharge-button-color)'
             });
+            sendNowBtn.hover(
+              function () {
+                $(this).css({
+                  'background-color': 'var(--recharge-color-brand-120)',
+                  'border-color': 'var(--recharge-color-brand-120)'
+                });
+              },
+              function () {
+                $(this).css({
+                  'background-color': 'var(--recharge-button-brand)',
+                  'border-color': 'var(--recharge-button-brand)'
+                });
+              }
+            );
 
             $('body').append(`
               <div class="cancel-popup">
