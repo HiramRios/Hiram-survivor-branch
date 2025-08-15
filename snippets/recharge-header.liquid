@@ -110,6 +110,34 @@
   .recharge-section-next-order-actions .recharge-card {
     position: relative;
   }
+  .recharge-section-next-order-actions .recharge-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .recharge-section-next-order-actions [data-testid="recharge-internal-charge-button"],
+  .recharge-section-next-order-actions [data-testid="recharge-internal-reschedule-button"],
+  .recharge-section-next-order-actions [data-testid="recharge-internal-skip-button"],
+  .recharge-section-next-order-actions [data-testid="recharge-internal-cancel-button"] {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  @media (min-width: 769px) {
+    .recharge-section-next-order-actions [data-testid="recharge-internal-charge-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-reschedule-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-skip-button"],
+    .recharge-section-next-order-actions [data-testid="recharge-internal-cancel-button"] {
+      width: 25%;
+      margin: 0;
+    }
+    .recharge-section-next-order-actions .recharge-card__footer {
+      flex-wrap: nowrap;
+    }
+  }
+  .recharge-section-next-order-actions [data-testid="recharge-internal-charge-button"] {
+    background: var(--recharge-button-secondary);
+    border-color: var(--recharge-button-secondary);
+    color: var(--recharge-button-color);
+  }
   .cancel-popup {
     position: fixed;
     top: 0;
