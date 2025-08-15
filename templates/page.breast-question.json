@@ -192,7 +192,7 @@
           "type": "question",
           "settings": {
             "step": 1,
-            "parent": "Estrogen Positive (ER+) ",
+            "parent": "Estrogen Positive (ER+)|Estrogen Positive (ER+) ",
             "title": "I’ve had multiple breast cancers",
             "description": "",
             "value": "",
