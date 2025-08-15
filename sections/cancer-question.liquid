@@ -102,42 +102,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Locale root from Liquid (e.g., "/", "/en-us", "/fr")
-    var LOCALE_ROOT = {{ request.locale.root_url | json }};
-
-    // Turn deep links and bare paths into navigable URLs under the current locale
-    function normalizeUrl(u) {
-      if (!u) return "";
-      // Already absolute or anchor/mailto/tel → leave it
-      if (/^https?:\/\//i.test(u) || /^#/.test(u) || /^(mailto:|tel:)/i.test(u)) return u;
-
-      // shopify://products/handle → /<locale>/products/handle
-      if (u.indexOf('shopify://') === 0) {
-        var path = u.replace('shopify://', '/'); // now "/products/handle" or "/collections/..."
-        return ensureLocalePrefix(path);
-      }
-
-      // Bare path "/something"
-      if (u.charAt(0) === '/') {
-        return ensureLocalePrefix(u);
-      }
-
-      // Anything else (relative like "pages/xyz") → make it a path, then prefix
-      return ensureLocalePrefix('/' + u);
-    }
-
-    function ensureLocalePrefix(path) {
-      // Normalize slashes
-      if (!path.startsWith('/')) path = '/' + path;
-      // Already prefixed?
-      if (LOCALE_ROOT !== '/' && path.indexOf(LOCALE_ROOT + '/') !== 0 && path !== LOCALE_ROOT) {
-        // Avoid double slashes when joining
-        var joined = (LOCALE_ROOT + path).replace(/\/{2,}/g, '/');
-        return joined;
-      }
-      return path;
-    }
-
     var questionBlocks = [
       {% assign question_blocks = section.blocks | where: 'type', 'question' %}
       {% for block in question_blocks %}
@@ -175,9 +139,13 @@
 
       if (!choices.length) {
         var keyParts = [];
-        for (var i = 1; i < step; i++) keyParts.push(answers[i]);
+        for (var i = 1; i < step; i++) {
+          keyParts.push(answers[i]);
+        }
         var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
-        if (finalUrl) window.location.href = normalizeUrl(finalUrl);
+        if (finalUrl) {
+          window.location.href = finalUrl;
+        }
         return;
       }
 
@@ -190,7 +158,7 @@
       choices.forEach(function (b) {
         var card = document.createElement('div');
         card.className = 'cancer-question__block';
-        card.dataset.url = normalizeUrl(b.url);
+        card.dataset.url = b.url;
         card.dataset.title = b.title;
         card.dataset.value = b.value;
         card.innerHTML = `
@@ -198,7 +166,7 @@
             <div class="cancer-question__block-icon"></div>
             <div class="cancer-question__block-text">
               <p class="cancer-question__block-text--title">${b.title}</p>
-              <p class="cancer-question__block-text--desc">${b.description || ''}</p>
+              <p class="cancer-question__block-text--desc">${b.description}</p>
             </div>
           </div>`;
         container.appendChild(card);
@@ -209,17 +177,16 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
-
       var keyParts = [];
-      for (var i = 1; i <= currentStep; i++) keyParts.push(answers[i]);
-
+      for (var i = 1; i <= currentStep; i++) {
+        keyParts.push(answers[i]);
+      }
       var partialUrl = resultMap[keyParts.join('|')];
       if (partialUrl) {
-        window.location.href = normalizeUrl(partialUrl);
+        window.location.href = partialUrl;
         return;
       }
-
-      lastUrl = normalizeUrl(card.dataset.url);
+      lastUrl = card.dataset.url;
       currentStep++;
       render(currentStep, card.dataset.title);
     });
@@ -234,6 +201,8 @@
     }
   });
 </script>
+
+
 
 {% schema %}
 {
