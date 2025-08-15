@@ -48,8 +48,8 @@
             "step": 1,
             "parent": "",
             "title": "Estrogen Positive (ER+) ",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)</b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen.",
-            "value": "",
+            "description": "",
+            "value": "er+",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -60,8 +60,8 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+)",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers </b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)</b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s).",
+            "title": "Estrogen Negative (ER-) ",
+            "description": "",
             "value": "",
             "url": "",
             "step_heading": "",
