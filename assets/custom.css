@@ -8282,6 +8282,11 @@ ul.blog-search-nav li a:hover {
     width: 100%;
     margin: 0 0 10px 0;
     padding: 12px;
+    box-sizing: border-box;
+}
+
+.recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+    margin-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -8289,9 +8294,13 @@ ul.blog-search-nav li a:hover {
     .recharge-component-schedule-item [data-testid="recharge-internal-reschedule-button"],
     .recharge-component-schedule-item [data-testid="recharge-internal-skip-button"],
     .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
-        width: 25%;
+        width: calc(25% - 10px);
         margin: 0 5px;
         display: inline-block;
+    }
+
+    .recharge-component-schedule-item [data-testid="recharge-internal-cancel-button"] {
+        margin-top: 0;
     }
 }
 
