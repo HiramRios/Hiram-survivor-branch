@@ -73,8 +73,60 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Negative (ER-)",
-            "description": "Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness.",
+            "title": "I dont know",
+            "description": "",
+            "value": "",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_KLyADx": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "Estrogen Positive (ER+) DCIS",
+            "description": "",
+            "value": "",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_aXtDT8": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "Estrogen Negative (ER-) DCIS ",
+            "description": "",
+            "value": "",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_MQHL4y": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "I’ve had multiple breast cancers (goes to Q2)",
+            "description": "",
+            "value": "",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_qTKLbz": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "I don’t know",
+            "description": "",
             "value": "",
             "url": "",
             "step_heading": "",
@@ -164,6 +216,10 @@
         "question_FXW4QP",
         "question_gBxyn4",
         "question_Um7RdL",
+        "question_KLyADx",
+        "question_aXtDT8",
+        "question_MQHL4y",
+        "question_qTKLbz",
         "question_TpQtFD",
         "question_jPVHhL",
         "question_raK6HJ",
