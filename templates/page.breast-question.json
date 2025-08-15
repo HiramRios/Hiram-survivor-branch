@@ -136,12 +136,12 @@
             "url": ""
           }
         },
-        "question_X4MB7n": {
+        "question_PtL9tw": {
           "type": "question",
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Estrogen Positive (ER+) ",
+            "title": "Estrogen positive",
             "description": "",
             "value": "er+",
             "url": "",
@@ -192,7 +192,7 @@
           "type": "question",
           "settings": {
             "step": 1,
-            "parent": "Estrogen Positive (ER+)|Estrogen Positive (ER+) ",
+            "parent": "Estrogen positive|Estrogen Positive (ER+) ",
             "title": "I’ve had multiple breast cancers",
             "description": "",
             "value": "",
@@ -243,7 +243,7 @@
       },
       "block_order": [
         "result_AwMpUi",
-        "question_X4MB7n",
+        "question_PtL9tw",
         "question_khEiwH",
         "question_MAWC3w",
         "question_Hik3Uq",
