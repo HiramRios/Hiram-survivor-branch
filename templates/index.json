@@ -1104,7 +1104,7 @@
         "faq_qxXNp6": {
           "type": "faq",
           "settings": {
-            "tab": "General",
+            "tab": "General Questions",
             "question": "General 1",
             "answer": "<p>general answer1</p>"
           }
@@ -1112,7 +1112,7 @@
         "faq_3ia7xJ": {
           "type": "faq",
           "settings": {
-            "tab": "General",
+            "tab": "General Questions",
             "question": "General 2",
             "answer": "<p>General answer 2</p>"
           }
@@ -1120,7 +1120,7 @@
         "faq_fnjBLH": {
           "type": "faq",
           "settings": {
-            "tab": "Policy",
+            "tab": "Cancer Survivor Support",
             "question": "Policy question 1",
             "answer": "<p>Policy answer 1</p>"
           }
@@ -1128,7 +1128,7 @@
         "faq_fXPHYc": {
           "type": "faq",
           "settings": {
-            "tab": "Policy",
+            "tab": "Cancer Survivor Support",
             "question": "Policy question 2",
             "answer": "<p>policy answer 2</p>"
           }
@@ -1136,7 +1136,7 @@
         "faq_LpKj3V": {
           "type": "faq",
           "settings": {
-            "tab": "Shipping",
+            "tab": "Subscription Manager",
             "question": "Shipping question 1",
             "answer": "<p>shipping answer 1</p>"
           }
@@ -1144,7 +1144,7 @@
         "faq_J44GGc": {
           "type": "faq",
           "settings": {
-            "tab": "Shipping",
+            "tab": "Subscription Manager",
             "question": "shipping question 2",
             "answer": "<p>shipping answer 2</p>"
           }
@@ -1160,8 +1160,11 @@
       ],
       "name": "FAQ tabs",
       "settings": {
-        "heading": "FAQs",
+        "heading": "Questions & Answers",
+        "subheading": "Find answers to the most frequently asked questions",
         "width": "wrapper",
+        "cta_link": "",
+        "cta_label": "Got more questions?",
         "padding_top": 36,
         "padding_bottom": 36,
         "bg_color": "#ffffff",
