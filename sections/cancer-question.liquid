@@ -102,10 +102,40 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Normalize "shopify://..." deep links to real storefront paths
+    // Locale root from Liquid (e.g., "/", "/en-us", "/fr")
+    var LOCALE_ROOT = {{ request.locale.root_url | json }};
+
+    // Turn deep links and bare paths into navigable URLs under the current locale
     function normalizeUrl(u) {
       if (!u) return "";
-      return u.indexOf('shopify://') === 0 ? u.replace('shopify://', '/') : u;
+      // Already absolute or anchor/mailto/tel → leave it
+      if (/^https?:\/\//i.test(u) || /^#/.test(u) || /^(mailto:|tel:)/i.test(u)) return u;
+
+      // shopify://products/handle → /<locale>/products/handle
+      if (u.indexOf('shopify://') === 0) {
+        var path = u.replace('shopify://', '/'); // now "/products/handle" or "/collections/..."
+        return ensureLocalePrefix(path);
+      }
+
+      // Bare path "/something"
+      if (u.charAt(0) === '/') {
+        return ensureLocalePrefix(u);
+      }
+
+      // Anything else (relative like "pages/xyz") → make it a path, then prefix
+      return ensureLocalePrefix('/' + u);
+    }
+
+    function ensureLocalePrefix(path) {
+      // Normalize slashes
+      if (!path.startsWith('/')) path = '/' + path;
+      // Already prefixed?
+      if (LOCALE_ROOT !== '/' && path.indexOf(LOCALE_ROOT + '/') !== 0 && path !== LOCALE_ROOT) {
+        // Avoid double slashes when joining
+        var joined = (LOCALE_ROOT + path).replace(/\/{2,}/g, '/');
+        return joined;
+      }
+      return path;
     }
 
     var questionBlocks = [
@@ -145,13 +175,9 @@
 
       if (!choices.length) {
         var keyParts = [];
-        for (var i = 1; i < step; i++) {
-          keyParts.push(answers[i]);
-        }
+        for (var i = 1; i < step; i++) keyParts.push(answers[i]);
         var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
-        if (finalUrl) {
-          window.location.href = normalizeUrl(finalUrl);
-        }
+        if (finalUrl) window.location.href = normalizeUrl(finalUrl);
         return;
       }
 
@@ -183,15 +209,16 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
+
       var keyParts = [];
-      for (var i = 1; i <= currentStep; i++) {
-        keyParts.push(answers[i]);
-      }
+      for (var i = 1; i <= currentStep; i++) keyParts.push(answers[i]);
+
       var partialUrl = resultMap[keyParts.join('|')];
       if (partialUrl) {
         window.location.href = normalizeUrl(partialUrl);
         return;
       }
+
       lastUrl = normalizeUrl(card.dataset.url);
       currentStep++;
       render(currentStep, card.dataset.title);
