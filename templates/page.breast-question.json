@@ -292,7 +292,7 @@
             "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
             "title": "SERMs (e.g., tamoxifen)",
             "description": "Selective Estrogen Receptor Modulators, such as tamoxifen, raloxifene, toremifene, ospemifene, are used to block estrogen's effects in hormone-sensitive cancers. Products: tamoxifen (Nolvadex), raloxifene (Evista), toremifene (Fareston), ospemifene (Osphena), lasofoxifene (Fablyn)",
-            "value": "",
+            "value": "SERMs",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -302,62 +302,23 @@
           "type": "question",
           "settings": {
             "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "AIs (e.g., anastrozole)",
+            "description": "Aromatase Inhibitors, such as anastrozole, letrozole, and exemestane, reduce estrogen production by inhibiting the aromatase enzyme, which is involved in estrogen synthesis. Products: anastrozole (Arimidex), letrozole (Femara), exemestane (Aromasin), formestane (Lentaron)",
+            "value": "AIs",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
         },
-        "question_tQgQpT": {
+        "question_V4dVte": {
           "type": "question",
           "settings": {
             "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_mrGzab": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_N8QBqK": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_JmFr6B": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "SERDs (e.g., fulvestrant)",
+            "description": "Selective Estrogen Receptor Degraders, such as fulvestrant, degrade the estrogen receptor, preventing estrogen from stimulating cancer cells. Products: fulvestrant (Faslodex), arzoxifene, bazedoxifene",
+            "value": "SERDs",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -415,6 +376,69 @@
             "combination": "era|HER2N",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-5"
           }
+        },
+        "result_QmcnDe": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
+          }
+        },
+        "result_MiCbFB": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
+          }
+        },
+        "result_8fhTkM": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
+          }
+        },
+        "result_M3Qk3t": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
+          }
+        },
+        "result_yMFAgi": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
+          }
+        },
+        "result_jdNnRQ": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
+          }
+        },
+        "result_gNFpFH": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
+          }
+        },
+        "result_z9Fnmk": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
+          }
+        },
+        "result_km6caE": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
+          }
         }
       },
       "block_order": [
@@ -432,15 +456,21 @@
         "question_cRNwVV",
         "question_D6WGJJ",
         "question_wWxnj9",
-        "question_tQgQpT",
-        "question_mrGzab",
-        "question_N8QBqK",
-        "question_JmFr6B",
+        "question_V4dVte",
         "question_t3BJTQ",
         "question_V3tPgH",
         "question_yqEnhC",
         "result_HFxW63",
-        "result_hHUhge"
+        "result_hHUhge",
+        "result_QmcnDe",
+        "result_MiCbFB",
+        "result_8fhTkM",
+        "result_M3Qk3t",
+        "result_yMFAgi",
+        "result_jdNnRQ",
+        "result_gNFpFH",
+        "result_z9Fnmk",
+        "result_km6caE"
       ],
       "name": "Cancer Quiz",
       "settings": {
