@@ -350,6 +350,19 @@
             "step_subheading": ""
           }
         },
+        "question_mLXbHB": {
+          "type": "question",
+          "settings": {
+            "step": 3,
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "4/6 Inhibitors with SERDs (e.g., fulvestrant & Ibrance)",
+            "description": "A combination of SERDs and 4/6 inhibitors to target estrogen and cancer cell growth. Products: fulvestrant (Faslodex), Ibrance (palbociclib), Kisqali (ribociclib), Verzenio (abemaciclib)",
+            "value": "4/6SERDs",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
         "question_t3BJTQ": {
           "type": "question",
           "settings": {
@@ -486,6 +499,48 @@
             "combination": "TPBC|4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
           }
+        },
+        "result_pQK9d7": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|4/6AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
+          }
+        },
+        "result_fA4Q9D": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|4/6AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
+          }
+        },
+        "result_YawKnq": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|4/6AIs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
+          }
+        },
+        "result_7VJyD7": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|4/6SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
+          }
+        },
+        "result_hD48aQ": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|4/6SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
+          }
+        },
+        "result_q69aRy": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|4/6SERDs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
+          }
         }
       },
       "block_order": [
@@ -506,6 +561,7 @@
         "question_V4dVte",
         "question_xgpB8i",
         "question_7z4ryY",
+        "question_mLXbHB",
         "question_t3BJTQ",
         "question_V3tPgH",
         "question_yqEnhC",
@@ -522,7 +578,13 @@
         "result_km6caE",
         "result_mEjLGF",
         "result_QaHVfK",
-        "result_E8zBiV"
+        "result_E8zBiV",
+        "result_pQK9d7",
+        "result_fA4Q9D",
+        "result_YawKnq",
+        "result_7VJyD7",
+        "result_hD48aQ",
+        "result_q69aRy"
       ],
       "name": "Cancer Quiz",
       "settings": {
