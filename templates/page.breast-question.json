@@ -163,7 +163,7 @@
             "title": "Estrogen Positive (ER+) DCIS",
             "description": "",
             "value": "erpdcis",
-            "url": "https://survivorrx.com/products/curcumin-turmeric-3rd-gen",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -211,10 +211,10 @@
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)",
+            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
             "title": "HER2 Positive ",
             "description": "",
-            "value": "",
+            "value": "HER2P",
             "url": "",
             "step_heading": "What is your HER2 status?",
             "step_subheading": ""
