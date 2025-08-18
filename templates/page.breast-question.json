@@ -135,8 +135,8 @@
             "step": 1,
             "parent": "",
             "title": "Estrogen Positive (ER+) ",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)</b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen.",
-            "value": "",
+            "description": "",
+            "value": "erp",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -147,10 +147,10 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+)",
-            "description": "Your cancer was estrogen receptor-positive (ER+), and you are either <b> not taking hormone blockers </b> or are taking <b> AIs (e.g., Letrozole) or SERDs (e.g., Faslodex)</b>. You’re focused on supporting survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or interfere with your medication (Ai or SERD’s).",
-            "value": "",
-            "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
+            "title": "Estrogen Negative (ER-)",
+            "description": "",
+            "value": "era",
+            "url": "",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -160,9 +160,9 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Negative (ER-)",
-            "description": "Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness.",
-            "value": "",
+            "title": "Estrogen Positive (ER+) DCIS",
+            "description": "",
+            "value": "erpdcis",
             "url": "https://survivorrx.com/products/curcumin-turmeric-3rd-gen",
             "step_heading": "",
             "step_subheading": ""
@@ -171,24 +171,24 @@
         "question_kmpQk6": {
           "type": "question",
           "settings": {
-            "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "Not yet (Premenopausal)",
-            "description": "Regular periods = Premenopausal",
-            "value": "",
+            "step": 1,
+            "parent": "",
+            "title": "Estrogen Negative (ER-) DCIS ",
+            "description": "",
+            "value": "endcis",
             "url": "",
-            "step_heading": "Question 2: Menopause Status (for all breast survivors and women ingeneral)",
-            "step_subheading": "“Have you gone through menopause yet?”"
+            "step_heading": "",
+            "step_subheading": ""
           }
         },
         "question_crbwbY": {
           "type": "question",
           "settings": {
-            "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "In transition (Perimenopausal)",
-            "description": "Irregular = Perimenopausal",
-            "value": "",
+            "step": 1,
+            "parent": "",
+            "title": "’ve had multiple breast cancers",
+            "description": "",
+            "value": "multiplebr",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -197,11 +197,11 @@
         "question_FLtyAF": {
           "type": "question",
           "settings": {
-            "step": 2,
-            "parent": "Hormone-Positive (ER+) on SERMs",
-            "title": "Yes (Postmenopausal)",
-            "description": "No periods for 12+ months = Postmenopausal",
-            "value": "",
+            "step": 1,
+            "parent": "",
+            "title": "I don’t know",
+            "description": "",
+            "value": "idk1",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
