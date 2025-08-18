@@ -134,7 +134,7 @@
           "settings": {
             "step": 1,
             "parent": "",
-            "title": "Hormone-Positive (ER+) on SERMs",
+            "title": "Estrogen Positive (ER+) ",
             "description": "Your cancer was estrogen receptor-positive (ER+), and you’re currently taking <b> SERMs (Tamoxifen)</b>. You want to support survivorship with nutrients that promote healthy cell function and overall wellness—while avoiding ingredients that may promote estrogen activity or are known to interfere with Tamoxifen.",
             "value": "",
             "url": "",
@@ -163,7 +163,7 @@
             "title": "Hormone-Negative (ER-)",
             "description": "Your cancer was estrogen receptor-negative (ER-) or triple negative and you are no longer on chemotherapy or radiation therapy. You are looking to optimize your survivorship nutrients, help naturally balance your hormones, while promoting healthy cell function and overall wellness.",
             "value": "",
-            "url": "https://survivorrx.com/products/wellsurvivor-all-survivors",
+            "url": "shopify://products/pre-probiotic-blend",
             "step_heading": "",
             "step_subheading": ""
           }
