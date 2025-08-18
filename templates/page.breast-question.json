@@ -220,14 +220,14 @@
             "step_subheading": ""
           }
         },
-        "question_pqrqqq": {
+        "question_XRwM99": {
           "type": "question",
           "settings": {
-            "step": 3,
-            "parent": "HER2 Positive",
-            "title": "question 3",
+            "step": 2,
+            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
+            "title": "TPBC (Triple-Positive Breast Cancer)",
             "description": "",
-            "value": "",
+            "value": "TPBC",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -237,23 +237,10 @@
           "type": "question",
           "settings": {
             "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
+            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
+            "title": "HER2 Negative",
             "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        },
-        "question_XRwM99": {
-          "type": "question",
-          "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
-            "description": "",
-            "value": "",
+            "value": "HER2N",
             "url": "",
             "step_heading": "",
             "step_subheading": ""
@@ -262,9 +249,22 @@
         "question_bdmFqq": {
           "type": "question",
           "settings": {
-            "step": 3,
+            "step": 2,
             "parent": "Yes (Postmenopausal)",
-            "title": "SERMs (Selective Estrogen Receptor Modulators) ℹ️",
+            "title": "TNBC (Triple-Negative Breast Cancer)",
+            "description": "",
+            "value": "TNBC",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_pqrqqq": {
+          "type": "question",
+          "settings": {
+            "step": 3,
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "question 3",
             "description": "",
             "value": "",
             "url": "",
@@ -418,10 +418,10 @@
         "question_crbwbY",
         "question_FLtyAF",
         "question_xKDnkp",
-        "question_pqrqqq",
-        "question_bkxNam",
         "question_XRwM99",
+        "question_bkxNam",
         "question_bdmFqq",
+        "question_pqrqqq",
         "question_cRNwVV",
         "question_D6WGJJ",
         "question_wWxnj9",
