@@ -324,6 +324,32 @@
             "step_subheading": ""
           }
         },
+        "question_xgpB8i": {
+          "type": "question",
+          "settings": {
+            "step": 3,
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "4/6 Inhibitors with SERMs (e.g., tamoxifen & Ibrance)",
+            "description": "A combination of SERMs and 4/6 inhibitors that target cancer cells in multiple ways. Products: tamoxifen (Nolvadex), raloxifene (Evista), Ibrance (palbociclib), Kisqali (ribociclib), Verzenio (abemaciclib)",
+            "value": "4/6SERMs",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
+        "question_7z4ryY": {
+          "type": "question",
+          "settings": {
+            "step": 3,
+            "parent": "HER2 Positive|TPBC (Triple-Positive Breast Cancer)|HER2 Negative|TNBC (Triple-Negative Breast Cancer)",
+            "title": "4/6 Inhibitors with AIs (e.g., anastrozole & Ibrance)",
+            "description": "A combination of AIs and 4/6 inhibitors that help reduce estrogen and slow cancer cell growth. Products: anastrozole (Arimidex), letrozole (Femara), exemestane (Aromasin), Ibrance (palbociclib), Kisqali (ribociclib), Verzenio (abemaciclib)",
+            "value": "4/6AIs",
+            "url": "",
+            "step_heading": "",
+            "step_subheading": ""
+          }
+        },
         "question_t3BJTQ": {
           "type": "question",
           "settings": {
@@ -439,6 +465,27 @@
             "combination": "TPBC|SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
+        },
+        "result_mEjLGF": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2N|4/6SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-9"
+          }
+        },
+        "result_QaHVfK": {
+          "type": "result",
+          "settings": {
+            "combination": "HER2P|4/6SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
+          }
+        },
+        "result_E8zBiV": {
+          "type": "result",
+          "settings": {
+            "combination": "TPBC|4/6SERMs",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
+          }
         }
       },
       "block_order": [
@@ -457,6 +504,8 @@
         "question_D6WGJJ",
         "question_wWxnj9",
         "question_V4dVte",
+        "question_xgpB8i",
+        "question_7z4ryY",
         "question_t3BJTQ",
         "question_V3tPgH",
         "question_yqEnhC",
@@ -470,7 +519,10 @@
         "result_jdNnRQ",
         "result_gNFpFH",
         "result_z9Fnmk",
-        "result_km6caE"
+        "result_km6caE",
+        "result_mEjLGF",
+        "result_QaHVfK",
+        "result_E8zBiV"
       ],
       "name": "Cancer Quiz",
       "settings": {
