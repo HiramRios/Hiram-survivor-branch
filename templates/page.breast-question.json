@@ -236,7 +236,7 @@
         "question_bkxNam": {
           "type": "question",
           "settings": {
-            "step": 3,
+            "step": 2,
             "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
             "title": "HER2 Negative",
             "description": "",
@@ -250,7 +250,7 @@
           "type": "question",
           "settings": {
             "step": 2,
-            "parent": "Yes (Postmenopausal)",
+            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
             "title": "TNBC (Triple-Negative Breast Cancer)",
             "description": "",
             "value": "TNBC",
