@@ -389,6 +389,19 @@
             "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
           }
         },
+        "question_dXLqYM": {
+          "type": "question",
+          "settings": {
+            "step": 4,
+            "parent": "No cancer related support medications|SERMs (e.g., tamoxifen)|AIs (e.g., anastrozole)|SERDs (e.g., fulvestrant)|4/6 Inhibitors with SERMs (e.g., tamoxifen & Ibrance)|4/6 Inhibitors with AIs (e.g., anastrozole & Ibrance)|4/6 Inhibitors with SERDs (e.g., fulvestrant & Ibrance)",
+            "title": "Yes",
+            "description": "",
+            "value": "",
+            "url": "",
+            "step_heading": "Are you postmenopausal?",
+            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
+          }
+        },
         "result_HFxW63": {
           "type": "result",
           "settings": {
@@ -551,6 +564,7 @@
         "question_MmWX9r",
         "question_pqrqqq",
         "question_t3BJTQ",
+        "question_dXLqYM",
         "result_HFxW63",
         "result_hHUhge",
         "result_QmcnDe",
