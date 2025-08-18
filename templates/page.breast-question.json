@@ -212,7 +212,7 @@
           "settings": {
             "step": 2,
             "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)|Estrogen Positive (ER+) DCIS|I’ve had multiple breast cancers",
-            "title": "HER2 Positive ",
+            "title": "HER2 Positive",
             "description": "",
             "value": "HER2P",
             "url": "",
