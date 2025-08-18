@@ -175,8 +175,8 @@
             "parent": "",
             "title": "Estrogen Negative (ER-) DCIS ",
             "description": "",
-            "value": "endcis",
-            "url": "",
+            "value": "",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-6",
             "step_heading": "",
             "step_subheading": ""
           }
@@ -201,7 +201,7 @@
             "parent": "",
             "title": "I don’t know",
             "description": "",
-            "value": "idk1",
+            "value": "",
             "url": "https://survivorrx.com/pages/quiz",
             "step_heading": "",
             "step_subheading": ""
@@ -210,13 +210,13 @@
         "question_xKDnkp": {
           "type": "question",
           "settings": {
-            "step": 3,
-            "parent": "Yes (Postmenopausal)",
-            "title": "I’m not taking any cancer-related medications",
+            "step": 2,
+            "parent": "Estrogen Positive (ER+) |Estrogen Negative (ER-)",
+            "title": "HER2 Positive ",
             "description": "",
             "value": "",
             "url": "",
-            "step_heading": "“Are you currently taking any of the following medications?”",
+            "step_heading": "What is your HER2 status?",
             "step_subheading": ""
           }
         },
