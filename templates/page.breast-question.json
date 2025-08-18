@@ -129,6 +129,13 @@
     "cancer_question_9Xetih": {
       "type": "cancer-question",
       "blocks": {
+        "result_HFxW63": {
+          "type": "result",
+          "settings": {
+            "combination": "era|HER2P",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-7"
+          }
+        },
         "question_X4MB7n": {
           "type": "question",
           "settings": {
@@ -404,6 +411,7 @@
         }
       },
       "block_order": [
+        "result_HFxW63",
         "question_X4MB7n",
         "question_khEiwH",
         "question_MAWC3w",
