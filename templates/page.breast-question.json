@@ -341,7 +341,7 @@
         "result_QmcnDe": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|SERMs",
+            "combination": "2=HER2P|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
           }
         },
