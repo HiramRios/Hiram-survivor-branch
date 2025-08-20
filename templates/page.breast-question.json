@@ -468,7 +468,7 @@
         "result_z9Fnmk": {
           "type": "result",
           "settings": {
-            "combination": "step=HER2P|step=SERDs",
+            "combination": "(step=HER2P|step=SERDs)",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
