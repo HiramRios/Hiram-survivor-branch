@@ -27,105 +27,6 @@
         "padding_bottom": 50
       }
     },
-    "cancer_question_6xCDwY": {
-      "type": "cancer-question",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#fcf4f6",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "image": "shopify://shop_images/Breast_Landing_Page.jpg",
-        "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
-      }
-    },
-    "cancer_question_4TnRXe": {
-      "type": "cancer-question",
-      "blocks": {
-        "result_Kp43Qj": {
-          "type": "result",
-          "settings": {
-            "combination": "ERS|yes|IV",
-            "url": ""
-          }
-        },
-        "result_8fFta8": {
-          "type": "result",
-          "settings": {
-            "combination": "ERS|no|cdk",
-            "url": ""
-          }
-        },
-        "result_JxHqNd": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_DgcH39": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_cLhDWt": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_QbF4L7": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_DWpxWR": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "question_WyFrzL": {
-          "type": "question",
-          "settings": {
-            "step": 1,
-            "parent": "",
-            "title": "",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": ""
-          }
-        }
-      },
-      "block_order": [
-        "result_Kp43Qj",
-        "result_8fFta8",
-        "result_JxHqNd",
-        "result_DgcH39",
-        "result_cLhDWt",
-        "result_QbF4L7",
-        "result_DWpxWR",
-        "question_WyFrzL"
-      ],
-      "disabled": true,
-      "name": "Cancer Question",
-      "settings": {
-        "bg_color": "#f9dee5",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "image": "shopify://shop_images/Breast_Landing_Page_f609d583-07ee-4809-b645-00913d108fad.jpg",
-        "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
-      }
-    },
     "cancer_question_9Xetih": {
       "type": "cancer-question",
       "blocks": {
@@ -136,10 +37,11 @@
             "parent": "",
             "title": "Estrogen Positive (ER+) ",
             "description": "",
-            "value": "erp",
+            "value": "",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": "Your breast cancer subtype, including hormone receptor status and other markers, can significantly impact which nutrients are safe and beneficial after treatment. By understanding these details, we can avoid ingredients that may interfere with your past or ongoing treatment, make smarter and safer formulation decisions, and help fill nutritional gaps that are common post-treatment."
           }
         },
         "question_khEiwH": {
@@ -152,7 +54,8 @@
             "value": "era",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_MAWC3w": {
@@ -165,7 +68,8 @@
             "value": "erpdcis",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_kmpQk6": {
@@ -178,7 +82,8 @@
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-6",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_crbwbY": {
@@ -191,7 +96,8 @@
             "value": "multiplebr",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_FLtyAF": {
@@ -204,7 +110,8 @@
             "value": "",
             "url": "https://survivorrx.com/pages/quiz",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_xKDnkp": {
@@ -217,7 +124,8 @@
             "value": "HER2P",
             "url": "",
             "step_heading": "What is your HER2 status?",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_XRwM99": {
@@ -230,7 +138,8 @@
             "value": "TPBC",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_bkxNam": {
@@ -243,7 +152,8 @@
             "value": "HER2N",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_bdmFqq": {
@@ -256,7 +166,8 @@
             "value": "TNBC",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_cRNwVV": {
@@ -269,7 +180,8 @@
             "value": "ncm",
             "url": "",
             "step_heading": "Question 3: Are you currently taking any of the following medications?",
-            "step_subheading": "I’m currently on:"
+            "step_subheading": "I’m currently on:",
+            "step_why": "Understanding your HER2 status helps us provide more personalized support and ensure the safest approach to your wellness."
           }
         },
         "question_D6WGJJ": {
@@ -282,7 +194,8 @@
             "value": "SERMs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_wWxnj9": {
@@ -295,7 +208,8 @@
             "value": "AIs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_V4dVte": {
@@ -308,7 +222,8 @@
             "value": "SERDs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_xgpB8i": {
@@ -321,7 +236,8 @@
             "value": "4/6SERMs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_7z4ryY": {
@@ -334,7 +250,8 @@
             "value": "4/6AIs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_mLXbHB": {
@@ -347,7 +264,8 @@
             "value": "4/6SERDs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_MmWX9r": {
@@ -360,7 +278,8 @@
             "value": "",
             "url": "shopify://pages/contact-us",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_pqrqqq": {
@@ -373,7 +292,8 @@
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_t3BJTQ": {
@@ -386,7 +306,8 @@
             "value": "",
             "url": "",
             "step_heading": "Are you postmenopausal?",
-            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
+            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are.",
+            "step_why": "Once your ovaries stop producing estrogen, your body’s nutritional needs—and how it interacts with certain natural ingredients or cancer medications—shift. Our oncologist-led team took this into account when formulating each SurvivorRx routine, because one size does not fit all."
           }
         },
         "question_dXLqYM": {
@@ -399,7 +320,8 @@
             "value": "",
             "url": "",
             "step_heading": "Are you postmenopausal?",
-            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
+            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are.",
+            "step_why": ""
           }
         },
         "result_HFxW63": {
@@ -419,126 +341,126 @@
         "result_QmcnDe": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|SERMs",
+            "combination": "2=HER2P|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
           }
         },
         "result_MiCbFB": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|SERMs",
+            "combination": "2=HER2N|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_8fhTkM": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|SERMs",
+            "combination": "2=TPBC|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
           }
         },
         "result_M3Qk3t": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|AIs",
+            "combination": "2=HER2N|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_yMFAgi": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|AIs",
+            "combination": "2=HER2P|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_jdNnRQ": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|AIs",
+            "combination": "2=TPBC|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_gNFpFH": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|SERDs",
+            "combination": "2=HER2N|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_z9Fnmk": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|SERDs",
+            "combination": "2=HER2P|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_km6caE": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|SERDs",
+            "combination": "2=TPBC|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_mEjLGF": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6SERMs",
+            "combination": "2=HER2N|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-9"
           }
         },
         "result_QaHVfK": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6SERMs",
+            "combination": "2=HER2P|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
           }
         },
         "result_E8zBiV": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6SERMs",
+            "combination": "2=TPBC|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
           }
         },
         "result_pQK9d7": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6AIs",
+            "combination": "2=HER2N|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
           }
         },
         "result_fA4Q9D": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6AIs",
+            "combination": "2=HER2P|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_YawKnq": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6AIs",
+            "combination": "2=TPBC|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_7VJyD7": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6SERDs",
+            "combination": "2=HER2N|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
           }
         },
         "result_hD48aQ": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6SERDs",
+            "combination": "2=HER2P|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_q69aRy": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6SERDs",
+            "combination": "2=TPBC|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         }
@@ -599,8 +521,6 @@
   },
   "order": [
     "main",
-    "cancer_question_6xCDwY",
-    "cancer_question_4TnRXe",
     "cancer_question_9Xetih"
   ]
 }
