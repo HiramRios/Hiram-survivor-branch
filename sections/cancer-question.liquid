@@ -127,12 +127,45 @@
       }
     });
 
-    var resultMap = {
+    var resultMappings = [
       {% assign result_blocks = section.blocks | where: 'type', 'result' %}
       {% for block in result_blocks %}
-        {{ block.settings.combination | json }}: {{ block.settings.url | json }}{% unless forloop.last %},{% endunless %}
+        { combo: {{ block.settings.combination | json }}, url: {{ block.settings.url | json }} }{% unless forloop.last %},{% endunless %}
       {% endfor %}
-    };
+    ];
+
+    resultMappings = resultMappings.map(function (r) {
+      var map = {};
+      r.combo.split('|').forEach(function (part, index) {
+        var step, value;
+        if (part.indexOf('=') > -1) {
+          var pieces = part.split('=');
+          step = pieces[0].trim();
+          value = pieces[1].trim();
+        } else {
+          step = (index + 1).toString();
+          value = part.trim();
+        }
+        map[step] = value;
+      });
+      r.map = map;
+      return r;
+    });
+
+    function checkResult(ans) {
+      for (var i = 0; i < resultMappings.length; i++) {
+        var rm = resultMappings[i];
+        var match = true;
+        for (var step in rm.map) {
+          if (ans[step] !== rm.map[step]) {
+            match = false;
+            break;
+          }
+        }
+        if (match) return rm.url;
+      }
+      return null;
+    }
 
     var container = document.getElementById('quiz-container');
     var currentStep = 1;
@@ -147,11 +180,7 @@
       });
 
       if (!choices.length) {
-        var keyParts = [];
-        for (var i = 1; i < step; i++) {
-          keyParts.push(answers[i]);
-        }
-        var finalUrl = resultMap[keyParts.join('|')] || lastUrl;
+        var finalUrl = checkResult(answers) || lastUrl;
         if (finalUrl) {
           window.location.href = finalUrl;
         }
@@ -186,11 +215,7 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
-      var keyParts = [];
-      for (var i = 1; i <= currentStep; i++) {
-        keyParts.push(answers[i]);
-      }
-      var partialUrl = resultMap[keyParts.join('|')];
+      var partialUrl = checkResult(answers);
       if (partialUrl) {
         window.location.href = partialUrl;
         return;
@@ -243,7 +268,7 @@
       "type": "result",
       "name": "Result Mapping",
       "settings": [
-        { "type": "text", "id": "combination", "label": "Answer Combination (value1|value2|...)" },
+        { "type": "text", "id": "combination", "label": "Answer Combination (value1|value2|... or step=value|step=value)" },
         { "type": "url", "id": "url", "label": "Result URL" }
       ]
     }
