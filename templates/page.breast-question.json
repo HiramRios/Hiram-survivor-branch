@@ -101,7 +101,8 @@
             "value": "",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         }
       },
@@ -139,7 +140,8 @@
             "value": "erp",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": "nm"
           }
         },
         "question_khEiwH": {
@@ -152,7 +154,8 @@
             "value": "era",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_MAWC3w": {
@@ -165,7 +168,8 @@
             "value": "erpdcis",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_kmpQk6": {
@@ -178,7 +182,8 @@
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-6",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_crbwbY": {
@@ -191,7 +196,8 @@
             "value": "multiplebr",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_FLtyAF": {
@@ -204,7 +210,8 @@
             "value": "",
             "url": "https://survivorrx.com/pages/quiz",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_xKDnkp": {
@@ -217,7 +224,8 @@
             "value": "HER2P",
             "url": "",
             "step_heading": "What is your HER2 status?",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_XRwM99": {
@@ -230,7 +238,8 @@
             "value": "TPBC",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_bkxNam": {
@@ -243,7 +252,8 @@
             "value": "HER2N",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_bdmFqq": {
@@ -256,7 +266,8 @@
             "value": "TNBC",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_cRNwVV": {
@@ -269,7 +280,8 @@
             "value": "ncm",
             "url": "",
             "step_heading": "Question 3: Are you currently taking any of the following medications?",
-            "step_subheading": "I’m currently on:"
+            "step_subheading": "I’m currently on:",
+            "step_why": ""
           }
         },
         "question_D6WGJJ": {
@@ -282,7 +294,8 @@
             "value": "SERMs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_wWxnj9": {
@@ -295,7 +308,8 @@
             "value": "AIs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_V4dVte": {
@@ -308,7 +322,8 @@
             "value": "SERDs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_xgpB8i": {
@@ -321,7 +336,8 @@
             "value": "4/6SERMs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_7z4ryY": {
@@ -334,7 +350,8 @@
             "value": "4/6AIs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_mLXbHB": {
@@ -347,7 +364,8 @@
             "value": "4/6SERDs",
             "url": "",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_MmWX9r": {
@@ -360,7 +378,8 @@
             "value": "",
             "url": "shopify://pages/contact-us",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_pqrqqq": {
@@ -373,7 +392,8 @@
             "value": "",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8",
             "step_heading": "",
-            "step_subheading": ""
+            "step_subheading": "",
+            "step_why": ""
           }
         },
         "question_t3BJTQ": {
@@ -386,7 +406,8 @@
             "value": "",
             "url": "",
             "step_heading": "Are you postmenopausal?",
-            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
+            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are.",
+            "step_why": ""
           }
         },
         "question_dXLqYM": {
@@ -399,7 +420,8 @@
             "value": "",
             "url": "",
             "step_heading": "Are you postmenopausal?",
-            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are."
+            "step_subheading": "You are considered postmenopausal if you haven’t had a menstrual period for 12 months or if your medical team has told you that you are.",
+            "step_why": ""
           }
         },
         "result_HFxW63": {
