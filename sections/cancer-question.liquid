@@ -183,7 +183,7 @@
 
       if (!choices.length) {
         var finalUrl = checkResult(answers) || lastUrl;
-        if (finalUrl) {
+        if (finalUrl && finalUrl !== 'null') {
           window.location.href = finalUrl;
         }
         return;
@@ -207,7 +207,9 @@
       choices.forEach(function (b) {
         var card = document.createElement('div');
         card.className = 'cancer-question__block';
-        card.dataset.url = b.url;
+        if (b.url) {
+          card.dataset.url = b.url;
+        }
         card.dataset.title = b.title;
         card.dataset.value = b.value;
         card.innerHTML = `
@@ -226,8 +228,9 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
-      if (card.dataset.url) {
-        lastUrl = card.dataset.url;
+      var url = card.dataset.url;
+      if (url && url !== 'null') {
+        lastUrl = url;
       }
       currentStep++;
       render(currentStep, card.dataset.title);
