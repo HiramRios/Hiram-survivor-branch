@@ -226,12 +226,9 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
-      var partialUrl = checkResult(answers);
-      if (partialUrl) {
-        window.location.href = partialUrl;
-        return;
+      if (card.dataset.url) {
+        lastUrl = card.dataset.url;
       }
-      lastUrl = card.dataset.url;
       currentStep++;
       render(currentStep, card.dataset.title);
     });
