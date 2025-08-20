@@ -348,119 +348,119 @@
         "result_MiCbFB": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|SERMs",
+            "combination": "2=HER2N|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_8fhTkM": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|SERMs",
+            "combination": "2=TPBC|3=SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-10"
           }
         },
         "result_M3Qk3t": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|AIs",
+            "combination": "2=HER2N|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_yMFAgi": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|AIs",
+            "combination": "2=HER2P|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_jdNnRQ": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|AIs",
+            "combination": "2=TPBC|3=AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_gNFpFH": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|SERDs",
+            "combination": "2=HER2N|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-8"
           }
         },
         "result_z9Fnmk": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|SERDs",
+            "combination": "2=HER2P|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_km6caE": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|SERDs",
+            "combination": "2=TPBC|3=SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-12"
           }
         },
         "result_mEjLGF": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6SERMs",
+            "combination": "2=HER2N|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-9"
           }
         },
         "result_QaHVfK": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6SERMs",
+            "combination": "2=HER2P|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
           }
         },
         "result_E8zBiV": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6SERMs",
+            "combination": "2=TPBC|3=4/6SERMs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-15"
           }
         },
         "result_pQK9d7": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6AIs",
+            "combination": "2=HER2N|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
           }
         },
         "result_fA4Q9D": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6AIs",
+            "combination": "2=HER2P|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_YawKnq": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6AIs",
+            "combination": "2=TPBC|3=4/6AIs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_7VJyD7": {
           "type": "result",
           "settings": {
-            "combination": "HER2N|4/6SERDs",
+            "combination": "2=HER2N|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-13"
           }
         },
         "result_hD48aQ": {
           "type": "result",
           "settings": {
-            "combination": "HER2P|4/6SERDs",
+            "combination": "2=HER2P|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         },
         "result_q69aRy": {
           "type": "result",
           "settings": {
-            "combination": "TPBC|4/6SERDs",
+            "combination": "2=TPBC|3=4/6SERDs",
             "url": "https://survivorrx.com/products/wellsurvivor-breast-br-14"
           }
         }
