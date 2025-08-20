@@ -27,106 +27,6 @@
         "padding_bottom": 50
       }
     },
-    "cancer_question_6xCDwY": {
-      "type": "cancer-question",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#fcf4f6",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "image": "shopify://shop_images/Breast_Landing_Page.jpg",
-        "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
-      }
-    },
-    "cancer_question_4TnRXe": {
-      "type": "cancer-question",
-      "blocks": {
-        "result_Kp43Qj": {
-          "type": "result",
-          "settings": {
-            "combination": "ERS|yes|IV",
-            "url": ""
-          }
-        },
-        "result_8fFta8": {
-          "type": "result",
-          "settings": {
-            "combination": "ERS|no|cdk",
-            "url": ""
-          }
-        },
-        "result_JxHqNd": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_DgcH39": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_cLhDWt": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_QbF4L7": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "result_DWpxWR": {
-          "type": "result",
-          "settings": {
-            "combination": "",
-            "url": ""
-          }
-        },
-        "question_WyFrzL": {
-          "type": "question",
-          "settings": {
-            "step": 1,
-            "parent": "",
-            "title": "",
-            "description": "",
-            "value": "",
-            "url": "",
-            "step_heading": "",
-            "step_subheading": "",
-            "step_why": ""
-          }
-        }
-      },
-      "block_order": [
-        "result_Kp43Qj",
-        "result_8fFta8",
-        "result_JxHqNd",
-        "result_DgcH39",
-        "result_cLhDWt",
-        "result_QbF4L7",
-        "result_DWpxWR",
-        "question_WyFrzL"
-      ],
-      "disabled": true,
-      "name": "Cancer Question",
-      "settings": {
-        "bg_color": "#f9dee5",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "image": "shopify://shop_images/Breast_Landing_Page_f609d583-07ee-4809-b645-00913d108fad.jpg",
-        "heading": "Which type of breast cancer did you survive?",
-        "subheading": "Your treatment was breast cancer specific—now your supplements can be too."
-      }
-    },
     "cancer_question_9Xetih": {
       "type": "cancer-question",
       "blocks": {
@@ -621,8 +521,6 @@
   },
   "order": [
     "main",
-    "cancer_question_6xCDwY",
-    "cancer_question_4TnRXe",
     "cancer_question_9Xetih"
   ]
 }
