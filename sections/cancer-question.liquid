@@ -210,8 +210,11 @@
     });
 
     function checkResult(ans) {
+      var ansKeys = Object.keys(ans);
       for (var i = 0; i < resultMappings.length; i++) {
         var rm = resultMappings[i];
+        var rmKeys = Object.keys(rm.map);
+        if (ansKeys.length !== rmKeys.length) continue;
         var match = true;
         for (var step in rm.map) {
           if (ans[step] !== rm.map[step]) {
@@ -299,11 +302,6 @@
       var card = e.target.closest('.cancer-question__block');
       if (!card) return;
       answers[currentStep] = card.dataset.value;
-      var partialUrl = checkResult(answers);
-      if (partialUrl) {
-        window.location.href = partialUrl;
-        return;
-      }
       lastUrl = card.dataset.url;
       currentStep++;
       render(currentStep, card.dataset.title);
