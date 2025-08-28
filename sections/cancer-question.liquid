@@ -12,7 +12,13 @@
         <div class="cancer-question__text">
           <h2>{{ section.settings.heading }}</h2>
           <p>{{ section.settings.subheading }}</p>
-          <p class="why-we-ask" style="display:none;"></p>
+          <button class="why-we-ask-btn" style="display:none;">Why we ask</button>
+          <div class="why-we-ask-modal" style="display:none;">
+            <div class="why-we-ask-modal-content">
+              <span class="why-we-ask-close">&times;</span>
+              <p class="why-we-ask-text"></p>
+            </div>
+          </div>
         </div>
 
         <div class="cancer-question__blocks" id="quiz-container">
@@ -99,6 +105,55 @@
   .cancer-question__buttons {
     margin-top: 20px;
   }
+
+  .why-we-ask-btn {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px 18px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .why-we-ask-btn:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  .why-we-ask-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .why-we-ask-modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .why-we-ask-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+  }
 </style>
 
 <script>
@@ -173,6 +228,24 @@
     var currentStep = 1;
     var lastUrl = null;
     var answers = {};
+    var whyBtnEl = document.querySelector('.cancer-question__text .why-we-ask-btn');
+    var whyModalEl = document.querySelector('.why-we-ask-modal');
+    var whyTextEl = document.querySelector('.why-we-ask-text');
+    var whyCloseEl = document.querySelector('.why-we-ask-close');
+
+    if (whyBtnEl && whyModalEl) {
+      whyBtnEl.addEventListener('click', function () {
+        whyModalEl.style.display = 'flex';
+      });
+    }
+    if (whyCloseEl && whyModalEl) {
+      whyCloseEl.addEventListener('click', function () {
+        whyModalEl.style.display = 'none';
+      });
+      whyModalEl.addEventListener('click', function (e) {
+        if (e.target === whyModalEl) whyModalEl.style.display = 'none';
+      });
+    }
 
     function render(step, parentTitle) {
       container.innerHTML = '';
@@ -192,15 +265,15 @@
       // Dynamic heading, subheading, and "why we ask" update
       var headingEl = document.querySelector('.cancer-question__text h2');
       var subheadingEl = document.querySelector('.cancer-question__text p');
-      var whyEl = document.querySelector('.cancer-question__text .why-we-ask');
       if (choices[0].heading && headingEl) headingEl.textContent = choices[0].heading;
       if (choices[0].subheading && subheadingEl) subheadingEl.textContent = choices[0].subheading;
-      if (whyEl) {
+      if (whyBtnEl && whyModalEl && whyTextEl) {
         if (choices[0].why) {
-          whyEl.innerHTML = '<strong>Why we ask:</strong> ' + choices[0].why;
-          whyEl.style.display = 'block';
+          whyTextEl.textContent = choices[0].why;
+          whyBtnEl.style.display = 'inline-block';
         } else {
-          whyEl.style.display = 'none';
+          whyBtnEl.style.display = 'none';
+          whyModalEl.style.display = 'none';
         }
       }
 
