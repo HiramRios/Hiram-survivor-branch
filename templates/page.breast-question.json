@@ -30,6 +30,20 @@
     "cancer_question_9Xetih": {
       "type": "cancer-question",
       "blocks": {
+        "question_kmpQk6": {
+          "type": "question",
+          "settings": {
+            "step": 1,
+            "parent": "",
+            "title": "Estrogen Negative (ER-) DCIS ",
+            "description": "",
+            "value": "",
+            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-6",
+            "step_heading": "",
+            "step_subheading": "",
+            "step_why": ""
+          }
+        },
         "question_X4MB7n": {
           "type": "question",
           "settings": {
@@ -67,20 +81,6 @@
             "description": "",
             "value": "erpdcis",
             "url": "",
-            "step_heading": "",
-            "step_subheading": "",
-            "step_why": ""
-          }
-        },
-        "question_kmpQk6": {
-          "type": "question",
-          "settings": {
-            "step": 1,
-            "parent": "",
-            "title": "Estrogen Negative (ER-) DCIS ",
-            "description": "",
-            "value": "",
-            "url": "https://survivorrx.com/products/wellsurvivor-breast-br-6",
             "step_heading": "",
             "step_subheading": "",
             "step_why": ""
@@ -466,10 +466,10 @@
         }
       },
       "block_order": [
+        "question_kmpQk6",
         "question_X4MB7n",
         "question_khEiwH",
         "question_MAWC3w",
-        "question_kmpQk6",
         "question_crbwbY",
         "question_FLtyAF",
         "question_xKDnkp",
